@@ -13,16 +13,16 @@
     <nav>
       <h1>RuteroRD</h1>
       <ul>
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#quien-soy">Quién Soy</a></li>
-        <li><a href="#rutas">Rutas</a></li>
-        <li><a href="#tips">Tips</a></li>
-        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="#" onclick="mostrarSeccion('inicio')">Inicio</a></li>
+        <li><a href="#" onclick="mostrarSeccion('quien-soy')">Quién Soy</a></li>
+        <li><a href="#" onclick="mostrarSeccion('rutas')">Rutas</a></li>
+        <li><a href="#" onclick="mostrarSeccion('tips')">Tips</a></li>
+        <li><a href="#" onclick="mostrarSeccion('contacto')">Contacto</a></li>
       </ul>
     </nav>
   </header>
 
-  <section id="inicio" class="seccion fondo-azul">
+  <section id="inicio" class="seccion">
     <h2>Bienvenido a RuteroRD</h2>
     <p>Explora rutas, aventuras y consejos de viaje junto a Joel Rodríguez.</p>
   </section>
@@ -39,24 +39,22 @@
   </section>
 
   <section id="rutas" class="seccion fondo-claro">
-  <h2>Rutas</h2>
+    <h2>Rutas</h2>
 
-  <article class="entrada">
-    <h3>Ruta: Mao – Contraembalse de Monción</h3>
-    <p class="fecha">1 de agosto, 2025</p>
-    <p>Una ruta llena de paisajes verdes y aire puro. Iniciamos desde Mao a las 7:00 a.m., rumbo al contraembalse, disfrutando de una carretera rodeada de naturaleza. Ideal para principiantes.</p>
-    <p class="etiquetas">#Aventura #Monción #Rutas</p>
-  </article>
+    <article class="entrada">
+      <h3>Ruta: Mao – Contraembalse de Monción</h3>
+      <p class="fecha">1 de agosto, 2025</p>
+      <p>Una ruta llena de paisajes verdes y aire puro. Iniciamos desde Mao a las 7:00 a.m., rumbo al contraembalse, disfrutando de una carretera rodeada de naturaleza. Ideal para principiantes.</p>
+      <p class="etiquetas">#Aventura #Monción #Rutas</p>
+    </article>
 
-  <article class="entrada">
-    <h3>Descubriendo la Presa de Sabaneta</h3>
-    <p class="fecha">28 de julio, 2025</p>
-    <p>Un viaje corto pero increíble. La vista desde el mirador es espectacular. Recomiendo llevar agua, buen calzado y cámara.</p>
-    <p class="etiquetas">#Presa #Sabaneta #Naturaleza</p>
-  </article>
-
-</section>
-
+    <article class="entrada">
+      <h3>Descubriendo la Presa de Sabaneta</h3>
+      <p class="fecha">28 de julio, 2025</p>
+      <p>Un viaje corto pero increíble. La vista desde el mirador es espectacular. Recomiendo llevar agua, buen calzado y cámara.</p>
+      <p class="etiquetas">#Presa #Sabaneta #Naturaleza</p>
+    </article>
+  </section>
 
   <section id="tips" class="seccion">
     <h2>Consejos & Tips</h2>
@@ -77,5 +75,18 @@
   <footer>
     <p>&copy; 2025 RuteroRD - Desarrollado por Joel Rodríguez</p>
   </footer>
+
+  <script>
+    function mostrarSeccion(id) {
+      const secciones = document.querySelectorAll('.seccion');
+      secciones.forEach(sec => sec.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      mostrarSeccion('inicio');
+    });
+  </script>
 </body>
 </html>
+
