@@ -13,80 +13,35 @@
     <nav>
       <h1>RuteroRD</h1>
       <ul>
-        <li><a href="#" onclick="mostrarSeccion('inicio')">Inicio</a></li>
-        <li><a href="#" onclick="mostrarSeccion('quien-soy')">Quién Soy</a></li>
-        <li><a href="#" onclick="mostrarSeccion('rutas')">Rutas</a></li>
-        <li><a href="#" onclick="mostrarSeccion('tips')">Tips</a></li>
-        <li><a href="#" onclick="mostrarSeccion('contacto')">Contacto</a></li>
+        <li><a href="index.html" target="_blank">Inicio</a></li>
+        <li><a href="secciones/quien-soy.html" target="_blank">Quién Soy</a></li>
+        <li><a href="secciones/rutas.html" target="_blank">Rutas</a></li>
+        <li><a href="secciones/tips.html" target="_blank">Tips</a></li>
+        <li><a href="secciones/contacto.html" target="_blank">Contacto</a></li>
       </ul>
     </nav>
   </header>
 
-  <section id="inicio" class="seccion">
-    <h2>Bienvenido a RuteroRD</h2>
-    <p>Explora rutas, aventuras y consejos de viaje junto a Joel Rodríguez.</p>
-  </section>
+  <main class="seccion">
+    <section>
+      <h2>Bienvenido a RuteroRD</h2>
+      <p>Hola, soy <strong>Joel Rodríguez</strong>, tengo 21 años y soy estudiante de Ingeniería en Sistemas. Soy un apasionado de las rutas, la naturaleza y la aventura. Este es mi espacio personal donde compartiré experiencias, recomendaciones y descubrimientos.</p>
+      <p>Explora conmigo cada rincón de la República Dominicana.</p>
+    </section>
 
-  <section id="quien-soy" class="seccion">
-    <h2>Quién Soy</h2>
-    <img src="https://via.placeholder.com/150" alt="Foto de Joel">
-    <p>Mi nombre es Joel Rodríguez, 21 años, estudiante de Ingeniería en Sistemas, apasionado por explorar nuevos lugares. En este espacio estaré compartiendo mis aventuras, ¡espero la disfruten igual que yo!</p>
-    <ul>
-      <li><strong>Profesión:</strong> Policía Escolar</li>
-      <li><strong>Ubicación:</strong> Mao, Valverde, República Dominicana</li>
-      <li><strong>Películas favoritas:</strong> Bloodshot, Lucy, Hancock, Sin Límites, Chronicle</li>
-    </ul>
-  </section>
-
-  <section id="rutas" class="seccion fondo-claro">
-    <h2>Rutas</h2>
-
-    <article class="entrada">
-      <h3>Ruta: Mao – Contraembalse de Monción</h3>
-      <p class="fecha">1 de agosto, 2025</p>
-      <p>Una ruta llena de paisajes verdes y aire puro. Iniciamos desde Mao a las 7:00 a.m., rumbo al contraembalse, disfrutando de una carretera rodeada de naturaleza. Ideal para principiantes.</p>
-      <p class="etiquetas">#Aventura #Monción #Rutas</p>
-    </article>
-
-    <article class="entrada">
-      <h3>Descubriendo la Presa de Sabaneta</h3>
-      <p class="fecha">28 de julio, 2025</p>
-      <p>Un viaje corto pero increíble. La vista desde el mirador es espectacular. Recomiendo llevar agua, buen calzado y cámara.</p>
-      <p class="etiquetas">#Presa #Sabaneta #Naturaleza</p>
-    </article>
-  </section>
-
-  <section id="tips" class="seccion">
-    <h2>Consejos & Tips</h2>
-    <p>Pronto estaré compartiendo los mejores consejos para disfrutar cada viaje al máximo.</p>
-  </section>
-
-  <section id="contacto" class="seccion fondo-azul">
-    <h2>Contacto</h2>
-    <p>¡Conéctate conmigo en redes sociales!</p>
-    <div class="redes">
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-facebook"></i></a>
-      <a href="#"><i class="fab fa-x-twitter"></i></a>
-      <a href="#"><i class="fab fa-youtube"></i></a>
-    </div>
-  </section>
+    <section class="destacado">
+      <h3>Ruta destacada</h3>
+      <article class="entrada">
+        <h4>Ruta: Mao – Contraembalse de Monción</h4>
+        <p class="fecha">1 de agosto, 2025</p>
+        <p>Una ruta llena de paisajes verdes y aire puro. Iniciamos desde Mao a las 7:00 a.m., rumbo al contraembalse. Ideal para principiantes.</p>
+        <p class="etiquetas">#Aventura #Monción #Rutas</p>
+      </article>
+    </section>
+  </main>
 
   <footer>
     <p>&copy; 2025 RuteroRD - Desarrollado por Joel Rodríguez</p>
   </footer>
-
-  <script>
-    function mostrarSeccion(id) {
-      const secciones = document.querySelectorAll('.seccion');
-      secciones.forEach(sec => sec.style.display = 'none');
-      document.getElementById(id).style.display = 'block';
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      mostrarSeccion('inicio');
-    });
-  </script>
 </body>
 </html>
-
