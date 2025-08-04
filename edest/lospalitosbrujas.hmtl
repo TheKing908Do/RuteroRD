@@ -1,1 +1,53 @@
-Hi
+<!-- Archivo: edest/lospalitosbrujas.html -->
+<div class="modal fade" id="modal-general" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-xl" role="document">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h4 class="modal-title">Ruta Mao - Balneario Los Palitos de las Brujas</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+
+        <!-- Imagen destacada -->
+        <img src="img/featured_1.jpg" class="img-fluid rounded mb-3" alt="Imagen destacada">
+
+        <!-- Texto principal -->
+        <div class="p-3 border rounded bg-light mb-3">
+          <p>El Balneario Los Palitos de las Brujas es un paraíso escondido en San José de las Matas (SAJOMA), rodeado de exuberante naturaleza y aguas cristalinas. Es perfecto para quienes buscan un escape de la rutina y desean disfrutar un día inolvidable.</p>
+          <p><strong>Cómo llegar:</strong> Desde Mao, toma la carretera hacia Sajoma. El lugar se encuentra cerca del puente de Las Brujas.</p>
+        </div>
+
+        <!-- Galería expandible -->
+        <button class="btn btn-outline-primary mb-3" data-toggle="collapse" data-target="#galeria-palitos">Ver más imágenes</button>
+        <div class="collapse" id="galeria-palitos">
+          <div class="row">
+            <div class="col-md-6 mb-2">
+              <img src="img/palitos_extra1.jpg" class="img-fluid rounded" alt="Imagen adicional 1">
+            </div>
+            <div class="col-md-6 mb-2">
+              <img src="img/palitos_extra2.jpg" class="img-fluid rounded" alt="Imagen adicional 2">
+            </div>
+          </div>
+        </div>
+
+        <!-- Video -->
+        <div class="embed-responsive embed-responsive-16by9 mt-4">
+          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/TUCODIGO" allowfullscreen></iframe>
+        </div>
+
+        <!-- Mapa -->
+        <div class="mt-4">
+          <h5><strong>Ubicación exacta:</strong></h5>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6516.041715515108!2d-71.0210198104022!3d19.350139905472048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eb1ad8ab3133025%3A0x3d6772d752a9975!2sBalneario%20Los%20Palitos%20Las%20Brujas!5e1!3m2!1ses-419!2sdo!4v1754327894236!5m2!1ses-419!2sdo" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
