@@ -205,7 +205,7 @@ https://templatemo.com/tm-518-sentra
                             <div class="image">
                                 <img src="img/featured_2.jpg" alt="">
                                 <div class="featured-button button">
-                                    <a href="#projects">Ver Más</a>
+                                    <a href="#" onclick="cargarModal('edest/lospalitosbrujas')">Ver Más</a>
                                 </div>
                             </div>
                             <div class="text-content">
@@ -677,60 +677,26 @@ https://templatemo.com/tm-518-sentra
     </script>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
-<div class="modal fade" id="modal-palitos" tabindex="-1" role="dialog" aria-labelledby="modalPalitosLabel" aria-hidden="true">
-  <div class="modal-dialog modal-xl" role="document">
-    <div class="modal-content">
+<!-- Contenedor donde se cargará el modal -->
+<div id="modal-container"></div>
 
-      <!-- Encabezado del modal -->
-      <div class="modal-header">
-        <h4 class="modal-title" id="modalPalitosLabel">Ruta Mao - Balneario Los Palitos de las Brujas</h4>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-
-      <!-- Cuerpo del modal -->
-      <div class="modal-body text-center">
-
-        <!-- Imagen destacada -->
-        <img src="img/featured_1.jpg" class="img-fluid rounded mb-3" alt="Imagen destacada">
-
-        <!-- Cuadro informativo central -->
-        <div class="p-3 border rounded bg-light mb-3">
-          <p>El Balneario Los Palitos de las Brujas es un paraíso escondido entre montañas, con aguas cristalinas ideales para descansar y compartir en familia o con amigos.</p>
-          <p><strong>Ubicación:</strong> San José de las Matas (SAJOMA), Santiago</p>
-        </div>
-
-        <!-- Botón para mostrar más imágenes -->
-        <button class="btn btn-outline-primary mb-3" data-toggle="collapse" data-target="#galeria-palitos">Ver más imágenes</button>
-
-        <!-- Galería expandible -->
-        <div class="collapse" id="galeria-palitos">
-          <div class="row">
-            <div class="col-md-6 mb-2">
-              <img src="img/palitos_extra1.jpg" class="img-fluid rounded" alt="Imagen extra 1">
-            </div>
-            <div class="col-md-6 mb-2">
-              <img src="img/palitos_extra2.jpg" class="img-fluid rounded" alt="Imagen extra 2">
-            </div>
-          </div>
-       
-        <!-- Video (YouTube) -->
-        <div class="embed-responsive embed-responsive-16by9 mt-4">
-          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/TUCODIGO" allowfullscreen></iframe>
-        </div>
- </div>
-            <div class="mt-4">
-              <h5><strong>Ubicación exacta:</strong></h5>
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6516.041715515108!2d-71.0210198104022!3d19.350139905472048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eb1ad8ab3133025%3A0x3d6772d752a9975!2sBalneario%20Los%20Palitos%20Las%20Brujas!5e1!3m2!1ses-419!2sdo!4v1754327894236!5m2!1ses-419!2sdo" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>
+<!-- Script para cargar contenido desde archivos externos -->
+<script>
+  function cargarModal(nombreArchivo) {
+    fetch(`${nombreArchivo}.html`)
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById('modal-container').innerHTML = html;
+        $('#modal-general').modal('show');
+      })
+      .catch(error => {
+        console.error('Error al cargar el modal:', error);
+      });
+  }
+</script>
 </body>
 </html>
+
 
 
 
