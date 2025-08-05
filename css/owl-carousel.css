@@ -13,6 +13,9 @@
   /* position relative and z-index fix webkit rendering fonts issue */
   position: relative;
   z-index: 1; }
+.owl-carousel {
+  touch-action: manipulation;
+}
   .owl-carousel .owl-stage {
     position: relative;
     -ms-touch-action: pan-Y;
@@ -79,13 +82,14 @@
     opacity: 0; }
   .owl-carousel.owl-refresh .owl-item {
     visibility: hidden; }
-  .owl-carousel.owl-drag .owl-item {
-    -ms-touch-action: none;
-        touch-action: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none; }
+.owl-carousel.owl-drag .owl-item {
+  -ms-touch-action: pan-y;
+      touch-action: pan-y;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
   .owl-carousel.owl-grab {
     cursor: move;
     cursor: grab; }
@@ -178,4 +182,5 @@
   position: relative;
   z-index: 1;
   height: 100%;
+
   width: 100%; }
