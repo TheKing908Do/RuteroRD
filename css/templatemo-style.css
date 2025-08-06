@@ -1074,20 +1074,17 @@ header {
   }
 
 
-}
-/* Por defecto (pantallas grandes): deja margen para el sidebar */
+/* ====== AJUSTE PARA QUE EL CONTENIDO NO SE META DEBAJO DEL SIDEBAR ====== */
 .page-content {
   margin-left: 250px;
   padding: 20px;
 }
 
-/* En tablets y móviles: elimina ese margen */
-@media (max-width: 991px) {
-  .page-content {
-    margin-left: 0;
-    padding: 15px;
-  }
+#video {
+  background-color: #ffffff;
+  padding: 40px 20px;
 }
+
 #video p {
   color: #222;
   font-size: 16px;
@@ -1096,8 +1093,10 @@ header {
   text-align: justify;
 }
 
-@media (max-width: 576px) {
-  #video p {
-    font-size: 15px;
+/* ====== RESPONSIVE: QUITAR EL MARGEN EN PANTALLAS PEQUEÑAS ====== */
+@media (max-width: 991px) {
+  .page-content {
+    margin-left: 0;
+    padding: 15px;
   }
 }
