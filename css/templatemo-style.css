@@ -1073,4 +1073,31 @@ header {
     padding-right: 15px;
   }
 
+
+}
+/* Por defecto (pantallas grandes): deja margen para el sidebar */
+.page-content {
+  margin-left: 250px;
+  padding: 20px;
+}
+
+/* En tablets y móviles: elimina ese margen */
+@media (max-width: 991px) {
+  .page-content {
+    margin-left: 0;
+    padding: 15px;
+  }
+}
+#video p {
+  color: #222;
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 400;
+  text-align: justify;
+}
+
+@media (max-width: 576px) {
+  #video p {
+    font-size: 15px;
+  }
 }
