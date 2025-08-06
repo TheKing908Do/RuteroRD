@@ -1107,19 +1107,8 @@ header {
   text-align: center;
 }
 
-	
-/* Aumentar tamaño de íconos sociales en sidebar */
-.sidebar-navigation .social-icons li a i {
-  font-size: 28px !important;
-  margin: 0 10px;
-  color: #ffffff;
-  transition: transform 0.2s ease;
-}
 
-.sidebar-navigation .social-icons li a i:hover {
-  transform: scale(1.2);
-  color: #cccccc;
-}
+
 
 
 
