@@ -1107,17 +1107,16 @@ header {
   text-align: center;
 }
 
-/* Estilo para íconos sociales del sidebar */
+/* 🔧 Aumentar el tamaño de íconos sociales en el sidebar */
 .sidebar-navigation .social-icons i {
-  font-size: 24px; /* Puedes subirlo hasta 28 o 30 si quieres aún más grandes */
-  margin: 0 6px;
-  color: #fff;
-  transition: transform 0.2s ease, color 0.2s ease;
+  font-size: 28px !important;  /* ¡Aquí está el cambio importante! */
+  margin: 0 10px;
+  color: #ffffff;
+  transition: transform 0.3s;
 }
 
 .sidebar-navigation .social-icons i:hover {
   transform: scale(1.2);
-  color: #ccc;
+  color: #cccccc;
 }
-
 
