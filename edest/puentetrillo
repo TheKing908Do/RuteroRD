@@ -1,0 +1,55 @@
+<!-- Archivo: edest/puentedetrillo.html -->
+<div class="modal fade" id="modal-general" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-xl" role="document">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h4 class="modal-title">Ruta Mao - Puente de Trillo</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+
+        <!-- Imagen destacada -->
+        <img src="img/puentedetrillo_main.jpg" class="img-fluid rounded mb-3" alt="Puente de Trillo - Imagen destacada">
+
+        <!-- Texto principal -->
+        <div class="p-3 border rounded bg-light mb-3">
+          <p>El Puente de Trillo es una estructura histórica que conecta comunidades y ha servido como punto de referencia en la región durante décadas. Rodeado de un paisaje natural encantador, el puente se encuentra sobre un río de aguas tranquilas que invitan a detenerse, admirar la vista y tomar fotografías.</p>
+          <p><strong>Cómo llegar:</strong> Desde Mao, toma la carretera hacia el sur en dirección a la comunidad donde se encuentra el Puente de Trillo. La ruta es accesible en la mayoría de los vehículos y está señalizada por los propios lugareños, quienes lo consideran un ícono local.</p>
+        </div>
+
+        <!-- Galería expandible -->
+        <button class="btn btn-outline-primary mb-3" data-toggle="collapse" data-target="#galeria-puentedetrillo">Ver más imágenes</button>
+        <div class="collapse" id="galeria-puentedetrillo">
+          <div class="row">
+            <div class="col-md-6 mb-2">
+              <img src="img/puentedetrillo_extra1.jpg" class="img-fluid rounded" alt="Puente de Trillo - Foto adicional 1">
+            </div>
+            <div class="col-md-6 mb-2">
+              <img src="img/puentedetrillo_extra2.jpg" class="img-fluid rounded" alt="Puente de Trillo - Foto adicional 2">
+            </div>
+          </div>
+        </div>
+
+        <!-- Video -->
+        <div class="embed-responsive embed-responsive-16by9 mt-4">
+          <!-- Reemplaza TUCODIGO por el ID real del video de YouTube -->
+          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/TUCODIGO" allowfullscreen></iframe>
+        </div>
+
+        <!-- Mapa -->
+        <div class="mt-4">
+          <h5><strong>Ubicación exacta:</strong></h5>
+          <!-- Pega aquí el iframe real de Google Maps -->
+          <iframe src="TU_IFRAME_DE_GOOGLE_MAPS_AQUI"
+                  width="100%" height="300" style="border:0;" allowfullscreen
+                  loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
