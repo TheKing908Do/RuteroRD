@@ -1,0 +1,55 @@
+<!-- Archivo: edest/contraembalsemoncion.html -->
+<div class="modal fade" id="modal-general" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-xl" role="document">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h4 class="modal-title">Ruta Mao - Contraembalse de Monción</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+
+        <!-- Imagen destacada -->
+        <img src="img/contraembalse_main.jpg" class="img-fluid rounded mb-3" alt="Imagen destacada del Contraembalse de Monción">
+
+        <!-- Texto principal -->
+        <div class="p-3 border rounded bg-light mb-3">
+          <p>El Contraembalse de Monción es un espejo de agua rodeado de montañas y vegetación típica de la Sierra, ideal para apreciar paisajes, respirar aire fresco y tomar fotografías. Es un punto perfecto para una parada tranquila dentro de la ruta por la zona de Monción.</p>
+          <p><strong>Cómo llegar:</strong> Desde Mao, toma la carretera hacia Monción. Al llegar al municipio, continúa por la vía que bordea el embalse principal y sigue la señalización/locales hasta el contraembalse. Los residentes suelen indicar la ruta sin problema.</p>
+        </div>
+
+        <!-- Galería expandible -->
+        <button class="btn btn-outline-primary mb-3" data-toggle="collapse" data-target="#galeria-contraembalse">Ver más imágenes</button>
+        <div class="collapse" id="galeria-contraembalse">
+          <div class="row">
+            <div class="col-md-6 mb-2">
+              <img src="img/contraembalse_extra1.jpg" class="img-fluid rounded" alt="Imagen adicional 1 del Contraembalse de Monción">
+            </div>
+            <div class="col-md-6 mb-2">
+              <img src="img/contraembalse_extra2.jpg" class="img-fluid rounded" alt="Imagen adicional 2 del Contraembalse de Monción">
+            </div>
+          </div>
+        </div>
+
+        <!-- Video -->
+        <div class="embed-responsive embed-responsive-16by9 mt-4">
+          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/TUCODIGO" allowfullscreen></iframe>
+        </div>
+
+        <!-- Mapa -->
+        <div class="mt-4">
+          <h5><strong>Ubicación exacta:</strong></h5>
+          <!-- Pega aquí el iframe de Google Maps -->
+          <iframe src="TU_IFRAME_DE_GOOGLE_MAPS_AQUI"
+                  width="100%" height="300" style="border:0;" allowfullscreen
+                  loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
