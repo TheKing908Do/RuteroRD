@@ -1,0 +1,55 @@
+<!-- Archivo: edest/pasojimenez.html -->
+<div class="modal fade" id="modal-general" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-xl" role="document">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h4 class="modal-title">Ruta Mao - Balneario Paso Jiménez</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+
+        <!-- Imagen destacada -->
+        <img src="img/pasojimenez_main.jpg" class="img-fluid rounded mb-3" alt="Imagen destacada del Balneario Paso Jiménez">
+
+        <!-- Texto principal -->
+        <div class="p-3 border rounded bg-light mb-3">
+          <p>El Balneario Paso Jiménez es un destino natural con aguas claras y un ambiente tranquilo, ideal para disfrutar en familia o con amigos. Rodeado de árboles y vegetación, es perfecto para un día de picnic, baño refrescante y contacto con la naturaleza.</p>
+          <p><strong>Cómo llegar:</strong> Desde Mao, toma la carretera hacia la comunidad de Paso Jiménez. El balneario se encuentra próximo al puente local, y los residentes pueden guiarte fácilmente hacia el lugar.</p>
+        </div>
+
+        <!-- Galería expandible -->
+        <button class="btn btn-outline-primary mb-3" data-toggle="collapse" data-target="#galeria-pasojimenez">Ver más imágenes</button>
+        <div class="collapse" id="galeria-pasojimenez">
+          <div class="row">
+            <div class="col-md-6 mb-2">
+              <img src="img/pasojimenez_extra1.jpg" class="img-fluid rounded" alt="Imagen adicional 1 del Balneario Paso Jiménez">
+            </div>
+            <div class="col-md-6 mb-2">
+              <img src="img/pasojimenez_extra2.jpg" class="img-fluid rounded" alt="Imagen adicional 2 del Balneario Paso Jiménez">
+            </div>
+          </div>
+        </div>
+
+        <!-- Video -->
+        <div class="embed-responsive embed-responsive-16by9 mt-4">
+          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/TUCODIGO" allowfullscreen></iframe>
+        </div>
+
+        <!-- Mapa -->
+        <div class="mt-4">
+          <h5><strong>Ubicación exacta:</strong></h5>
+          <!-- Pega aquí el iframe de Google Maps -->
+          <iframe src="TU_IFRAME_DE_GOOGLE_MAPS_AQUI"
+                  width="100%" height="300" style="border:0;" allowfullscreen
+                  loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
