@@ -1,0 +1,56 @@
+<!-- Archivo: edest/ladiferencia.html -->
+<div class="modal fade" id="modal-general" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-xl" role="document">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h4 class="modal-title">Ruta Mao - La Diferencia</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+
+        <!-- Imagen destacada -->
+        <img src="img/diferencia_main.jpg" class="img-fluid rounded mb-3" alt="Imagen destacada de La Diferencia">
+
+        <!-- Texto principal -->
+        <div class="p-3 border rounded bg-light mb-3">
+          <p>La Diferencia es un paraje natural que se ha ganado el corazón de los visitantes por sus hermosos paisajes, el frescor de su clima y la calidez de su gente. Este lugar es perfecto para descansar, disfrutar de vistas panorámicas y tomar fotografías que capturen la esencia de la naturaleza en la región de Mao.</p>
+          <p><strong>Cómo llegar:</strong> Desde Mao, sigue la carretera principal hacia la zona montañosa en dirección a Monción. La ruta está bien señalizada y es transitada por locales. Al acercarte, pregunta a los residentes; todos conocen “La Diferencia” y te orientarán fácilmente.</p>
+        </div>
+
+        <!-- Galería expandible -->
+        <button class="btn btn-outline-primary mb-3" data-toggle="collapse" data-target="#galeria-diferencia">Ver más imágenes</button>
+        <div class="collapse" id="galeria-diferencia">
+          <div class="row">
+            <div class="col-md-6 mb-2">
+              <img src="img/diferencia_extra1.jpg" class="img-fluid rounded" alt="Imagen adicional 1 de La Diferencia">
+            </div>
+            <div class="col-md-6 mb-2">
+              <img src="img/diferencia_extra2.jpg" class="img-fluid rounded" alt="Imagen adicional 2 de La Diferencia">
+            </div>
+          </div>
+        </div>
+
+        <!-- Video -->
+        <div class="embed-responsive embed-responsive-16by9 mt-4">
+          <!-- Reemplaza TUCODIGO con el ID real del video -->
+          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/TUCODIGO" allowfullscreen></iframe>
+        </div>
+
+        <!-- Mapa -->
+        <div class="mt-4">
+          <h5><strong>Ubicación exacta:</strong></h5>
+          <!-- Pega aquí el iframe de Google Maps -->
+          <iframe src="TU_IFRAME_DE_GOOGLE_MAPS_AQUI"
+                  width="100%" height="300" style="border:0;" allowfullscreen
+                  loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
