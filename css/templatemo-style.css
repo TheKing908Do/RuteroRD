@@ -1129,5 +1129,31 @@ header {
   }
 }
 
+	
+/* Iconos del slider */
+.slider-icons img,
+.slider-icons i {
+  max-width: 100%;
+  height: auto;
+  font-size: clamp(16px, 4vw, 40px); /* Para iconos de fuente */
+}
+
+/* Iconos del footer */
+.footer-icons img,
+.footer-icons i {
+  max-width: 100%;
+  height: auto;
+  font-size: clamp(14px, 3.5vw, 36px);
+}
+
+/* Asegura espacio adecuado en pantallas pequeñas */
+@media (max-width: 600px) {
+  .slider-icons i,
+  .footer-icons i {
+    font-size: 20px;
+  }
+}
+
+
 
 
