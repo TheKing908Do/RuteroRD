@@ -148,3 +148,28 @@ jQuery(document).ready(function($) {
   }
 
 });
+
+// Filtrar todo el contenido
+document.getElementById('sidebarSearch').addEventListener('input', function () {
+    let filter = this.value.toLowerCase().trim();
+
+    // Selecciona TODAS las secciones y artículos que quieras filtrar
+    let elements = document.querySelectorAll('section, article, .content, .post, .project-item, .featured-item');
+
+    elements.forEach(function (el) {
+        let text = el.innerText.toLowerCase();
+
+        // Si está vacío el filtro, mostrar todo
+        if (filter === '') {
+            el.style.display = '';
+        } else {
+            // Si incluye la palabra, mostrar; si no, ocultar
+            if (text.includes(filter)) {
+                el.style.display = '';
+            } else {
+                el.style.display = 'none';
+            }
+        }
+    });
+});
+
