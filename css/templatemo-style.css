@@ -1033,6 +1033,11 @@ header {
     padding-right: 15px;
   }
 
+	#video {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
   #featured .owl-nav {
     position: absolute;
     display: inline-block;
@@ -1041,11 +1046,6 @@ header {
   }
 
   #projects {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-
-  #video {
     padding-left: 15px;
     padding-right: 15px;
   }
@@ -1128,36 +1128,6 @@ header {
     border-radius: 6px;
   }
 }
-
-.sidebar-search {
-  background: #2b2b2b;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-.sidebar-search .form-control {
-  width: 100%;
-  border: none;
-  border-radius: 4px;
-  padding: 8px 10px;
-  font-size: 14px;
-}
-.sidebar-search .form-control:focus {
-  outline: none;
-  box-shadow: 0 0 5px rgba(255,255,255,0.35);
-}
-
-
-.sidebar-search {
-  padding: 10px;
-}
-.sidebar-search input {
-  width: 100%;
-  padding: 6px 10px;
-  font-size: 14px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-}
-
-
 
 
 
