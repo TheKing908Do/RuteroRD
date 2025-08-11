@@ -1107,6 +1107,28 @@ header {
   text-align: center;
 }
 
+/* Ajustes para Tips & Consejos en móviles */
+@media (max-width: 768px) {
+  .categories-list, .categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* espacio entre categorías */
+  }
+
+  .categories-list li, .categories li {
+    flex: 1 1 calc(50% - 10px); /* dos columnas en móviles */
+    text-align: center;
+    font-size: 14px; /* texto más pequeño */
+  }
+
+  .categories-list a, .categories a {
+    display: block;
+    padding: 8px 10px;
+    background: #f7f7f7;
+    border-radius: 6px;
+  }
+}
+
 
 
 
