@@ -181,7 +181,7 @@ header {
   float: left;
   height: 100%;
   position: fixed;
-  background-color: rgba(175, 206, 230, 0.7) !important;
+  background-color: rgba(26, 188, 156, 0.8) !important;
   z-index: 10;
 }
 
@@ -1153,6 +1153,7 @@ header {
     font-size: 20px;
   }
 }
+
 
 
 
