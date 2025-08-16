@@ -1155,5 +1155,11 @@ header {
 }
 
 
+/* Cambiar overlay a celeste transparente */
+.slider-left,
+.slider-caption {
+  background: rgba(135, 206, 235, 0.5) !important; 
+}
+
 
 
