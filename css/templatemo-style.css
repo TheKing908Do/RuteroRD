@@ -1175,8 +1175,6 @@ header {
 /* 2) Tamaño y nitidez del logo */
 .sidebar-navigation .logo img{
   max-height: 70px;            /* ajusta según se vea */
-  width: auto;
-  display: block;
 }
 
 /* 3) Estilo para tagline opcional bajo el nombre */
@@ -1187,6 +1185,7 @@ header {
   color: rgba(255,255,255,0.9);
   letter-spacing: .5px;
 }
+
 
 
 
