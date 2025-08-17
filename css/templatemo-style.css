@@ -1155,6 +1155,39 @@ header {
 }
 
 
+/* 1) Quitar morado y borde; usar mismo azul turístico */
+.sidebar-navigation .logo{
+  background: rgba(0, 174, 239, 0.85) !important; /* Azul Caribe */
+  height: 110px;               /* antes 140px */
+  line-height: 110px;
+  padding: 12px 20px;          /* menos padding */
+  border-bottom: 1px solid rgba(255,255,255,0.15); /* separador sutil */
+}
+.sidebar-navigation .logo a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: none !important;     /* quita el marco blanco */
+  text-decoration: none;
+}
+
+/* 2) Tamaño y nitidez del logo */
+.sidebar-navigation .logo img{
+  max-height: 70px;            /* ajusta según se vea */
+  width: auto;
+  display: block;
+}
+
+/* 3) Estilo para tagline opcional bajo el nombre */
+.logo small{
+  display:block;
+  margin-top: -6px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.9);
+  letter-spacing: .5px;
+}
+
 
 
 
