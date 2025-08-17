@@ -1155,37 +1155,36 @@ header {
 }
 
 
-/* 1) Quitar morado y borde; usar mismo azul turístico */
+	
+/* --- Arreglo rápido RuteroRD --- */
+
+/* 1) Ocultar cualquier logo dentro del slider (deja solo texto/foto del slide) */
+.owl-carousel .item img.logo,
+.owl-carousel .item .logo,
+.owl-carousel img[alt*="Rutero"],
+.owl-carousel img[alt*="RuteroRD"]{
+  display: none !important;
+}
+
+/* 2) Ajustar el bloque del logo en la barra izquierda (quitar morado y marco) */
 .sidebar-navigation .logo{
-  background: rgba(0, 174, 239, 0.85) !important; /* Azul Caribe */
-  height: 110px;               /* antes 140px */
-  line-height: 110px;
-  padding: 12px 20px;          /* menos padding */
-  border-bottom: 1px solid rgba(255,255,255,0.15); /* separador sutil */
+  background: transparent !important;   /* o usa el mismo azul si prefieres */
+  height: 90px;
+  line-height: 90px;
+  padding: 10px 20px;
+  border: none !important;
 }
 .sidebar-navigation .logo a{
+  border: none !important;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  border: none !important;     /* quita el marco blanco */
-  text-decoration: none;
 }
-
-/* 2) Tamaño y nitidez del logo */
 .sidebar-navigation .logo img{
-  max-height: 70px;            /* ajusta según se vea */
+  max-height: 60px;   /* reduce tamaño del logo lateral */
+  width: auto;
+  display: block;
 }
-
-/* 3) Estilo para tagline opcional bajo el nombre */
-.logo small{
-  display:block;
-  margin-top: -6px;
-  font-size: 12px;
-  color: rgba(255,255,255,0.9);
-  letter-spacing: .5px;
-}
-
 
 
 
