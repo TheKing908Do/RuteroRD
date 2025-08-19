@@ -31,7 +31,7 @@
 /* Imagen del logo más grande y responsiva */
 .sidebar-navigation .logo img{
   display: block !important;
-  max-width: 98% !important;
+  max-width: 130% !important;
   max-height: 200px !important;   /* tamaño visible del logo */
   height: auto !important;
   margin: 0 auto 6px auto !important;
@@ -44,6 +44,8 @@
   letter-spacing: .5px !important;
   color: #eaf6ff !important;
   font-weight: 600 !important;
+
+  margin-top: -20px !important; 
 }
 
 /* En pantallas altas, permite un logo aún mayor */
