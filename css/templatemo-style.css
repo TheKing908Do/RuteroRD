@@ -1263,14 +1263,13 @@ a.btn:hover, .primary-button:hover, .main-button:hover, .filled-button:hover{
   margin: 0 auto 5px auto;     /* Centrado + espacio con el texto */
 }
 
-/* Texto debajo del logo */
-.logo small {
+.sidebar-navigation .logo small {
   display: block;
   font-size: 12px;
   letter-spacing: 1px;
-  color: #1abc9c;              /* Verde agua elegante */
+  color: #1abc9c;      /* Verde agua recomendado */
+  margin-top: 6px;
   font-weight: 600;
 }
-
 
 
