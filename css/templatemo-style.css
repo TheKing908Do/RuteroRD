@@ -1154,122 +1154,30 @@ header {
   }
 }
 
-
-/* === RuteroRD – mejoras UI === */
-
-/* 1) Links del menú lateral */
-.sidebar-navigation nav a{
-  color: #eef8ff;
-  opacity: .9;
-  transition: color .2s ease, opacity .2s ease;
-}
-.sidebar-navigation nav a:hover{
-  color: #ffffff;
-  opacity: 1;
-  text-decoration: none;
-}
-
-/* 2) Punto activo del menú (el circulito) */
-.sidebar-navigation li::marker{ content: ""; } /* oculta marker por si acaso */
-.sidebar-navigation li{
-  position: relative;
-  padding-left: 18px;
-}
-.sidebar-navigation li::before{
-  content:"";
-  position:absolute;
-  left:0; top:50%;
-  width:6px; height:6px;
-  border-radius:50%;
-  transform: translateY(-50%);
-  background: rgba(255,255,255,.35);
-}
-.sidebar-navigation li.active::before{
-  background:#fff;           /* activo más visible */
-  box-shadow:0 0 0 3px rgba(255,255,255,.18);
-}
-
-/* 3) Botón principal del slider */
-a.btn, .primary-button, .main-button, .filled-button{
-  background:#00AEEF;        /* azul turismo */
-  color:#fff !important;
-  border:none;
-  padding:10px 18px;
-  border-radius:6px;
-  font-weight:600;
-  transition: transform .08s ease, opacity .15s ease;
-}
-a.btn:hover, .primary-button:hover, .main-button:hover, .filled-button:hover{
-  opacity:.92;
-  transform: translateY(-1px);
-}
-
-/* 4) Títulos del slider: mejor legibilidad sobre foto */
-.owl-carousel .item h2, 
-.owl-carousel .item h3{
-  text-shadow:0 2px 16px rgba(0,0,0,.35);
-}
-
-/* 5) Contenido a la derecha: respeta el ancho del sidebar en desktop */
-@media (min-width: 992px){
-  .content-section, .page-content, .templatemo-item {
-    margin-left: 22.5%;
-  }
-}
-/* En móvil: sin margen lateral */
-@media (max-width: 991px){
-  .content-section, .page-content, .templatemo-item {
-    margin-left: 0;
-  }
-}
-
-/* 6) Footer social del sidebar: más claro y alineado */
-.sidebar-navigation .social-icons a{
-  color:#eaf6ff;
-  opacity:.85;
-  margin-right:10px;
-}
-.sidebar-navigation .social-icons a:hover{ opacity:1; }
-
-/* 7) Ajuste del logo en el cuadro superior del sidebar */
-.sidebar-navigation .logo {
-  background: transparent;   /* o #0099cc si quieres un azul */
-  height: 120px;             /* alto del cuadro */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.sidebar-navigation .logo img {
-  max-height: 80%;   /* se adapta sin salirse del cuadro */
-  max-width: 80%;
-  height: auto;
-  width: auto;
-  display: block;
-}
-
-/* Caja del logo */
+/* === Logo con tagline === */
 .logo {
-  text-align: center;          /* Centra todo */
-  padding: 15px 10px;          /* Espacio interno */
-  background: #0d2538;         /* Fondo oscuro */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
-/* Imagen del logo */
 .logo img {
-  max-width: 90px;             /* Controla el tamaño */
+  max-width: 120px;   /* ajusta tamaño del logo */
   height: auto;
   display: block;
-  margin: 0 auto 5px auto;     /* Centrado + espacio con el texto */
 }
 
-.sidebar-navigation .logo small {
-  display: block;
+.logo small {
+  margin-top: 5px;
+  color: #fff;
   font-size: 12px;
   letter-spacing: 1px;
-  color: #1abc9c;      /* Verde agua recomendado */
-  margin-top: 6px;
-  font-weight: 600;
+  display: block;
 }
+
+
+
+
 
 
