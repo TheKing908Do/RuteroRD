@@ -1176,6 +1176,11 @@ header {
   display: block;
 }
 
+  #contact-content {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+} /* <-- Cierra @media (max-width: 690px) aquí */
 
 
 
