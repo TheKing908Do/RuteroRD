@@ -6,14 +6,17 @@
 }
 
 /* 2) Logo: caja y centrado */
-.sidebar-navigation .logo{
-  background: rgba(0,170,200,0.25) !important; /* azul suave/transparente */
+.sidebar-navigation .logo {
+  background: transparent !important;
   height: 160px !important;
   padding: 14px 12px !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   text-align: center !important;
+
+  /* 👉 mover hacia abajo */
+  margin-top: 20px !important;  /* prueba con 20px, ajusta a tu gusto */
 }
 
 /* Quita el borde y restricciones del <a> original del template */
