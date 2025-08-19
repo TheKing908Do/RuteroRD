@@ -1154,55 +1154,6 @@ header {
   }
 }
 
-/* === RUTERORD: FIX DEFINITIVO DEL LOGO EN LA CASILLA SUPERIOR === */
-.sidebar-navigation .logo{
-  position: relative !important;     /* anula el absolute del template */
-  height: 120px !important;          /* alto del cuadro del logo */
-  line-height: normal !important;    /* quita line-height que deformaba */
-  background: #0d2538 !important;    /* o transparent si prefieres */
-  padding: 0 !important;
-  text-align: center !important;
-  display: block !important;
-  border: 0 !important;
-}
-
-.sidebar-navigation .logo a{
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  height: 100% !important;
-  width: 100% !important;
-  padding: 0 !important;
-  border: 0 !important;              /* quita el borde del template */
-  text-decoration: none !important;
-  box-shadow: none !important;
-}
-
-.sidebar-navigation .logo img{
-  max-width: 95px !important;        /* controla el tamaño del logo */
-  max-height: 80% !important;
-  height: auto !important;
-  width: auto !important;
-  display: block !important;
-  margin: 0 !important;
-}
-
-.sidebar-navigation .logo small{
-  display: block !important;
-  margin-top: 6px !important;
-  font-size: 12px !important;
-  letter-spacing: 1px !important;
-  color: #1abc9c !important;         /* cambias si quieres */
-  font-weight: 600 !important;
-  text-transform: none !important;   /* evita uppercase heredado */
-}
-
-
-  #contact-content {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-} /* <-- Cierra @media (max-width: 690px) aquí */
 
 
 
