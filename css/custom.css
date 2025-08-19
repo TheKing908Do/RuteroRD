@@ -1,116 +1,80 @@
 /* =======================================================
-   RUTERORD – Estilos personalizados
+   RUTERORD – Estilos personalizados (SAFE)
+   Reemplaza totalmente tu custom.css por este bloque.
    ======================================================= */
 
-/* === 1. Links del menú lateral === */
-.sidebar-navigation nav a {
-  color: #eef8ff;
-  opacity: .9;
-  transition: color .2s ease, opacity .2s ease;
-}
-.sidebar-navigation nav a:hover {
-  color: #ffffff;
-  opacity: 1;
-  text-decoration: none;
+/* === LOGO (solo ajustar encaje, sin tocar nada más) === */
+.sidebar-navigation .logo{
+  /* Fondo transparente para NO tapar la imagen de atrás */
+  background: transparent !important;
+
+  /* Altura moderada para que no se pegue arriba */
+  height: 110px !important;
+
+  /* Centrado vertical y horizontal del contenido */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  /* Un poquito de aire para que no quede pegado al borde */
+  padding: 8px 0 !important;
+
+  /* Asegura que nada raro del template se meta aquí */
+  border: 0 !important;
+  box-shadow: none !important;
+  text-align: center !important;
 }
 
-/* === 2. Punto activo del menú (circulito) === */
-.sidebar-navigation li::marker { content: ""; }
-.sidebar-navigation li {
-  position: relative;
-  padding-left: 18px;
-}
-.sidebar-navigation li::before {
-  content:"";
-  position:absolute;
-  left:0; top:50%;
-  width:6px; height:6px;
-  border-radius:50%;
-  transform: translateY(-50%);
-  background: rgba(255,255,255,.35);
-}
-.sidebar-navigation li.active::before {
-  background:#fff;
-  box-shadow:0 0 0 3px rgba(255,255,255,.18);
+.sidebar-navigation .logo a{
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 100% !important;
+  width: 100% !important;
+  padding: 0 !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
+  line-height: 1 !important;
+  background: transparent !important;
 }
 
-/* === 3. Botón principal === */
-a.btn, .primary-button, .main-button, .filled-button {
-  background:#00AEEF;
-  color:#fff !important;
-  border:none;
-  padding:10px 18px;
-  border-radius:6px;
-  font-weight:600;
-  transition: transform .08s ease, opacity .15s ease;
-}
-a.btn:hover, .primary-button:hover, .main-button:hover, .filled-button:hover {
-  opacity:.92;
-  transform: translateY(-1px);
+.sidebar-navigation .logo img{
+  /* Tamaño del logo: ajusta este valor si lo quieres más grande/pequeño */
+  max-height: 64px !important;
+  width: auto !important;
+  display: block !important;
+  margin: 0 !important;
 }
 
-/* === 4. Títulos del slider === */
-.owl-carousel .item h2, 
-.owl-carousel .item h3 {
-  text-shadow:0 2px 16px rgba(0,0,0,.35);
+.sidebar-navigation .logo small{
+  display: block !important;
+  font-size: 11px !important;
+  letter-spacing: .5px !important;
+  color: #eaf6ff !important; /* texto clarito */
+  margin-top: 4px !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
 }
 
-/* === 5. Contenido a la derecha === */
-@media (min-width: 992px){
-  .content-section, .page-content, .templatemo-item {
-    margin-left: 22.5%;
-  }
-}
-@media (max-width: 991px){
-  .content-section, .page-content, .templatemo-item {
-    margin-left: 0;
-  }
+/* === FIX de “puntitos” en la barra de íconos ===
+   (solo afecta a la lista de íconos, NO a todo <li>) */
+.sidebar-navigation .social-icons li::before{
+  content: none !important;
+  display: none !important;
 }
 
-/* === 6. Footer social del sidebar === */
-.sidebar-navigation .social-icons a {
-  color:#eaf6ff;
-  opacity:.85;
-  margin-right:10px;
-}
-.sidebar-navigation .social-icons a:hover { opacity:1; }
-
-/* === 7. Logo en la casilla superior === */
-.sidebar-navigation .logo {
-  background:#0d2538;        /* cambia a transparent si no quieres fondo */
-  height:120px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:0;
+/* Asegura que los íconos no hereden padding de listas del template */
+.sidebar-navigation .social-icons li{
+  padding-left: 0 !important;
 }
 
-.sidebar-navigation .logo a {
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  height:100%;
-  width:100%;
-  border:none;
-  box-shadow:none;
-  text-decoration:none;
-  padding:0;
-}
-
-.sidebar-navigation .logo img {
-  max-height:72px;           /* ajusta tamaño del logo */
-  width:auto;
-  display:block;
-  margin:0 auto 6px auto;
-}
-
-.sidebar-navigation .logo small {
-  display:block;
-  font-size:12px;
-  letter-spacing:1px;
-  color:#1abc9c;             /* color del eslogan */
-  font-weight:600;
-  margin-top:4px;
+/* === RESETEO de margen lateral del contenido ===
+   Por si un override previo dejó el contenido corrido,
+   lo devolvemos al valor por defecto del template. */
+.content-section,
+.page-content,
+.templatemo-item{
+  margin-left: unset !important; /* volvemos al valor original */
 }
