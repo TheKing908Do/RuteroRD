@@ -1248,5 +1248,29 @@ a.btn:hover, .primary-button:hover, .main-button:hover, .filled-button:hover{
   display: block;
 }
 
+/* Caja del logo */
+.logo {
+  text-align: center;          /* Centra todo */
+  padding: 15px 10px;          /* Espacio interno */
+  background: #0d2538;         /* Fondo oscuro */
+}
+
+/* Imagen del logo */
+.logo img {
+  max-width: 90px;             /* Controla el tamaño */
+  height: auto;
+  display: block;
+  margin: 0 auto 5px auto;     /* Centrado + espacio con el texto */
+}
+
+/* Texto debajo del logo */
+.logo small {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #1abc9c;              /* Verde agua elegante */
+  font-weight: 600;
+}
+
 
 
