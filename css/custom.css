@@ -1,80 +1,75 @@
-/* =======================================================
-   RUTERORD – Estilos personalizados (SAFE)
-   Reemplaza totalmente tu custom.css por este bloque.
-   ======================================================= */
+/* === RuteroRD – ajustes puntuales === */
 
-/* === LOGO (solo ajustar encaje, sin tocar nada más) === */
+/* 1) Sidebar más transparente para que se vea el fondo */
+.sidebar-navigation{
+  background-color: rgba(13,37,56,0.65) !important; /* antes 0.9 */
+}
+
+/* 2) Logo: caja y centrado */
 .sidebar-navigation .logo{
-  /* Fondo transparente para NO tapar la imagen de atrás */
-  background: transparent !important;
-
-  /* Altura moderada para que no se pegue arriba */
-  height: 110px !important;
-
-  /* Centrado vertical y horizontal del contenido */
+  background: rgba(0,170,200,0.25) !important; /* azul suave/transparente */
+  height: 160px !important;
+  padding: 14px 12px !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-
-  /* Un poquito de aire para que no quede pegado al borde */
-  padding: 8px 0 !important;
-
-  /* Asegura que nada raro del template se meta aquí */
-  border: 0 !important;
-  box-shadow: none !important;
   text-align: center !important;
 }
 
+/* Quita el borde y restricciones del <a> original del template */
 .sidebar-navigation .logo a{
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  justify-content: center !important;
-  height: 100% !important;
-  width: 100% !important;
-  padding: 0 !important;
   border: 0 !important;
-  box-shadow: none !important;
-  text-decoration: none !important;
-  line-height: 1 !important;
-  background: transparent !important;
-}
-
-.sidebar-navigation .logo img{
-  /* Tamaño del logo: ajusta este valor si lo quieres más grande/pequeño */
-  max-height: 64px !important;
-  width: auto !important;
+  height: auto !important;
+  width: 100% !important;
   display: block !important;
-  margin: 0 !important;
+  text-decoration: none !important;
 }
 
+/* Imagen del logo más grande y responsiva */
+.sidebar-navigation .logo img{
+  display: block !important;
+  max-width: 90% !important;
+  max-height: 88px !important;   /* tamaño visible del logo */
+  height: auto !important;
+  margin: 0 auto 6px auto !important;
+}
+
+/* Texto bajo el logo */
 .sidebar-navigation .logo small{
   display: block !important;
-  font-size: 11px !important;
+  font-size: 13px !important;
   letter-spacing: .5px !important;
-  color: #eaf6ff !important; /* texto clarito */
-  margin-top: 4px !important;
+  color: #eaf6ff !important;
   font-weight: 600 !important;
-  text-transform: none !important;
 }
 
-/* === FIX de “puntitos” en la barra de íconos ===
-   (solo afecta a la lista de íconos, NO a todo <li>) */
-.sidebar-navigation .social-icons li::before{
-  content: none !important;
+/* En pantallas altas, permite un logo aún mayor */
+@media (min-height: 900px){
+  .sidebar-navigation .logo{ height: 180px !important; }
+  .sidebar-navigation .logo img{ max-height: 104px !important; }
+}
+
+/* 3) Ocultar el buscador del menú que aparece arriba */
+.sidebar-navigation input[type="text"],
+.sidebar-navigation input[type="search"],
+.sidebar-navigation .search,
+.sidebar-navigation .menu-search{
   display: none !important;
 }
 
-/* Asegura que los íconos no hereden padding de listas del template */
+/* 4) Quitar puntitos en la barra de iconos del footer */
+.sidebar-navigation .social-icons,
 .sidebar-navigation .social-icons li{
-  padding-left: 0 !important;
+  list-style: none !important;
 }
 
-/* === RESETEO de margen lateral del contenido ===
-   Por si un override previo dejó el contenido corrido,
-   lo devolvemos al valor por defecto del template. */
-.content-section,
-.page-content,
-.templatemo-item{
-  margin-left: unset !important; /* volvemos al valor original */
+/* 5) Pequeños toques de legibilidad del menú */
+.sidebar-navigation nav a{
+  color: #eef8ff !important;
+  opacity: .95 !important;
 }
+.sidebar-navigation nav a:hover{
+  opacity: 1 !important;
+  text-decoration: none !important;
+}
+
