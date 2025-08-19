@@ -137,6 +137,16 @@
   height: 100%;
   border: 0;
 }
+.item img {
+  max-width: 200px;   /* ancho máximo */
+  max-height: 200px;  /* alto máximo */
+  width: 100%;        /* se adapta al contenedor */
+  height: auto;       /* mantiene la proporción */
+  object-fit: cover;  /* recorta si es necesario */
+  border-radius: 6px; /* opcional, esquinas redondeadas */
+  display: block;
+  margin: 0 auto;     /* centra la imagen */
+}
 
 
 
