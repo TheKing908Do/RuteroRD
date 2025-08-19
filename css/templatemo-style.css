@@ -1155,53 +1155,81 @@ header {
 }
 
 
-/* === Overrides RuteroRD (colocar al final del CSS) === */
+/* === RuteroRD – mejoras UI === */
 
-/* Panel lateral: azul turismo translúcido */
-.sidebar-navigation{
-  background-color: rgba(0, 174, 239, 0.60); /* Azul Caribe 60% */
-  /* opcional: efecto moderno */
-  /* backdrop-filter: saturate(120%) blur(2px); */
+/* 1) Links del menú lateral */
+.sidebar-navigation nav a{
+  color: #eef8ff;
+  opacity: .9;
+  transition: color .2s ease, opacity .2s ease;
+}
+.sidebar-navigation nav a:hover{
+  color: #ffffff;
+  opacity: 1;
+  text-decoration: none;
 }
 
-/* Header del logo (limpio y proporcionado) */
-.sidebar-navigation .logo{
-  background: transparent !important;   /* o pon el mismo azul si prefieres */
-  height: 100px;
-  line-height: 100px;
-  padding: 10px 20px;
-  border: none !important;
+/* 2) Punto activo del menú (el circulito) */
+.sidebar-navigation li::marker{ content: ""; } /* oculta marker por si acaso */
+.sidebar-navigation li{
+  position: relative;
+  padding-left: 18px;
 }
-.sidebar-navigation .logo a{
-  border: none !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
+.sidebar-navigation li::before{
+  content:"";
+  position:absolute;
+  left:0; top:50%;
+  width:6px; height:6px;
+  border-radius:50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,.35);
 }
-.sidebar-navigation .logo img{
-  max-height: 64px;  /* ajusta si lo ves grande/pequeño */
-  width: auto;
-  display: block;
-}
-
-/* Menú móvil (hamburguesa) con mismo color de fondo */
-#main-nav ul{
-  background-color: rgba(0, 174, 239, 0.90);
+.sidebar-navigation li.active::before{
+  background:#fff;           /* activo más visible */
+  box-shadow:0 0 0 3px rgba(255,255,255,.18);
 }
 
-/* (Opcional) Solo si todavía aparece un logo dentro del carrusel: descomenta
-.owl-carousel .item img.logo,
-.owl-carousel .item .logo,
-.owl-carousel img[alt*="Rutero"],
-.owl-carousel img[alt*="RuteroRD"]{
-  display: none !important;
+/* 3) Botón principal del slider */
+a.btn, .primary-button, .main-button, .filled-button{
+  background:#00AEEF;        /* azul turismo */
+  color:#fff !important;
+  border:none;
+  padding:10px 18px;
+  border-radius:6px;
+  font-weight:600;
+  transition: transform .08s ease, opacity .15s ease;
 }
-*/
+a.btn:hover, .primary-button:hover, .main-button:hover, .filled-button:hover{
+  opacity:.92;
+  transform: translateY(-1px);
+}
 
+/* 4) Títulos del slider: mejor legibilidad sobre foto */
+.owl-carousel .item h2, 
+.owl-carousel .item h3{
+  text-shadow:0 2px 16px rgba(0,0,0,.35);
+}
 
+/* 5) Contenido a la derecha: respeta el ancho del sidebar en desktop */
+@media (min-width: 992px){
+  .content-section, .page-content, .templatemo-item {
+    margin-left: 22.5%;
+  }
+}
+/* En móvil: sin margen lateral */
+@media (max-width: 991px){
+  .content-section, .page-content, .templatemo-item {
+    margin-left: 0;
+  }
+}
 
-
+/* 6) Footer social del sidebar: más claro y alineado */
+.sidebar-navigation .social-icons a{
+  color:#eaf6ff;
+  opacity:.85;
+  margin-right:10px;
+}
+.sidebar-navigation .social-icons a:hover{ opacity:1; }
 
 
 
