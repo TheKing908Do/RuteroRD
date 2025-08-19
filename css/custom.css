@@ -2,7 +2,7 @@
 
 /* 1) Sidebar más transparente para que se vea el fondo */
 .sidebar-navigation{
-  background-color: rgba(13,37,56,0.65) !important; /* antes 0.9 */
+  background-color: rgbargba(0, 174, 239, 0.7) !important; /* antes 0.9 */
 }
 
 /* 2) Logo: caja y centrado */
@@ -46,7 +46,7 @@
 /* En pantallas altas, permite un logo aún mayor */
 @media (min-height: 900px){
   .sidebar-navigation .logo{ height: 180px !important; }
-  .sidebar-navigation .logo img{ max-height: 104px !important; }
+  .sidebar-navigation .logo img{ max-height: 180px !important; }
 }
 
 /* 3) Ocultar el buscador del menú que aparece arriba */
