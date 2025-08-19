@@ -137,17 +137,16 @@
   height: 100%;
   border: 0;
 }
-.item img {
+.item img[src*="mochila.jpg"],
+.item img[src*="tiempo.jpg"] {
   max-width: 200px;   /* ancho máximo */
   max-height: 200px;  /* alto máximo */
-  width: 100%;        /* se adapta al contenedor */
-  height: auto;       /* mantiene la proporción */
+  width: 100%;        /* responsivo */
+  height: auto;       /* mantiene proporción */
   object-fit: cover;  /* recorta si es necesario */
-  border-radius: 6px; /* opcional, esquinas redondeadas */
+  border-radius: 6px; /* opcional */
   display: block;
-  margin: 0 auto;     /* centra la imagen */
+  margin: 0 auto;
 }
-
-
 
 
