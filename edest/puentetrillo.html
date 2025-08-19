@@ -1,10 +1,10 @@
-<!-- Archivo: edest/puentedetrillo.html -->
-<div class="modal fade" id="modal-general" tabindex="-1" role="dialog">
-  <div class="modal-dialog modal-xl" role="document">
+<!-- Modal: Ruta Mao - Puente de Trillo -->
+<div class="modal fade" id="modal-general" tabindex="-1" role="dialog" aria-labelledby="modalTrilloTitle" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable" role="document">
     <div class="modal-content">
 
       <div class="modal-header">
-        <h4 class="modal-title">Ruta Mao - Puente de Trillo</h4>
+        <h4 class="modal-title" id="modalTrilloTitle">Ruta Mao - Puente de Trillo</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -13,7 +13,12 @@
       <div class="modal-body">
 
         <!-- Imagen destacada -->
-        <img src="img/trillo.jpg" class="img-fluid rounded mb-3" alt="Puente de Trillo - Imagen destacada">
+        <img
+          src="img/trillo.jpg"
+          class="img-fluid rounded mb-3"
+          alt="Puente de Trillo - Imagen destacada"
+          style="max-height:60vh; object-fit:cover; width:100%;"
+        >
 
         <!-- Texto principal -->
         <div class="p-3 border rounded bg-light mb-3">
@@ -22,7 +27,14 @@
         </div>
 
         <!-- Galería expandible -->
-        <button class="btn btn-outline-primary mb-3" data-toggle="collapse" data-target="#galeria-puentedetrillo">Ver más imágenes</button>
+        <button class="btn btn-outline-primary mb-3"
+                data-toggle="collapse"
+                data-target="#galeria-puentedetrillo"
+                aria-expanded="false"
+                aria-controls="galeria-puentedetrillo">
+          Ver más imágenes
+        </button>
+
         <div class="collapse" id="galeria-puentedetrillo">
           <div class="row">
             <div class="col-md-6 mb-2">
@@ -34,22 +46,32 @@
           </div>
         </div>
 
-        <!-- Video -->
+        <!-- Video (16:9) -->
         <div class="embed-responsive embed-responsive-16by9 mt-4">
           <!-- Reemplaza TUCODIGO por el ID real del video de YouTube -->
-          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/TUCODIGO" allowfullscreen></iframe>
+          <iframe class="embed-responsive-item"
+                  src="https://www.youtube.com/embed/TUCODIGO"
+                  allowfullscreen
+                  title="Video Puente de Trillo"></iframe>
         </div>
 
-        <!-- Mapa -->
+        <!-- Mapa responsivo -->
         <div class="mt-4">
           <h5><strong>Ubicación exacta:</strong></h5>
-          <!-- Pega aquí el iframe real de Google Maps -->
-          <iframe src="https://www.youtube.com/embed/MV2oEoGMhIo?si=V5MOx8wf75CsyJqK"
-                  width="100%" height="300" style="border:0;" allowfullscreen
-                  loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <div class="map-responsive">
+            <!-- Pega aquí el iframe real de Google Maps (el que tenías era de YouTube) -->
+            <iframe
+              src="https://www.google.com/maps/embed?pb=TU_IFRAME_DE_GOOGLE_MAPS_AQUI"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen
+              title="Mapa Puente de Trillo"></iframe>
+          </div>
         </div>
 
-      </div>
-    </div>
-  </div>
-</div>
+      </div><!-- /.modal-body -->
+
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
