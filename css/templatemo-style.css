@@ -1231,5 +1231,22 @@ a.btn:hover, .primary-button:hover, .main-button:hover, .filled-button:hover{
 }
 .sidebar-navigation .social-icons a:hover{ opacity:1; }
 
+/* 7) Ajuste del logo en el cuadro superior del sidebar */
+.sidebar-navigation .logo {
+  background: transparent;   /* o #0099cc si quieres un azul */
+  height: 120px;             /* alto del cuadro */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar-navigation .logo img {
+  max-height: 80%;   /* se adapta sin salirse del cuadro */
+  max-width: 80%;
+  height: auto;
+  width: auto;
+  display: block;
+}
+
 
 
