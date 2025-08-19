@@ -783,8 +783,40 @@
       });
   }
 </script>
+
+        document.getElementById('modal-container').innerHTML = html;
+        $('#modal-general').modal('show');
+      })
+      .catch(error => {
+        console.error('Error al cargar el modal:', error);
+      });
+  }
+</script>
+
+<script>
+document.querySelectorAll('.box-video').forEach(box=>{
+  const cover = box.querySelector('.bg-video');
+  const iframe = box.querySelector('iframe');
+
+  if(cover && iframe){
+    cover.addEventListener('click', ()=>{
+      // autoplay al hacer click
+      const src = iframe.getAttribute('data-src');
+      iframe.setAttribute('src', src + "?autoplay=1");
+      box.classList.add('playing');
+    });
+  }
+});
+</script>
+
+
+
+
+
+    
 </body>
 </html>
+
 
 
 
