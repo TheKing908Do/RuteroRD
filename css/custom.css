@@ -112,24 +112,40 @@
 }
 
 
-.btn-ver-mas {
-  display: inline-block;
-  margin: 20px auto;       /* espacio arriba/abajo y centrado */
-  padding: 12px 28px;      /* más grande y cómodo */
-  font-size: 1rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  background-color: #4a3fb3;  /* color acorde a tu tema */
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  transition: all 0.3s ease;
-  cursor: pointer;
+/* --- A) Galería: 100% ancho, en columna --- */
+.modal .galeria-expandible .row > [class*="col"] {
+  flex: 0 0 100% !important;
+  max-width: 100% !important;
+}
+.modal .galeria-expandible img {
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  margin-bottom: 14px !important;
+  border-radius: 6px !important;
+  object-fit: cover !important;
 }
 
-.btn-ver-mas:hover {
-  background-color: #362f8a;  /* tono más oscuro al pasar el mouse */
-  transform: scale(1.05);     /* pequeño efecto de zoom */
+/* --- B) Botón "Ver más imágenes" centrado y visible --- */
+.modal .btn-ver-mas,
+#modal-general .btn-ver-mas {
+  display: inline-block !important;
+  margin: 20px auto !important;
+  padding: 12px 28px !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  background: #4a3fb3 !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 6px !important;
+  cursor: pointer !important;
+  transition: all .25s ease !important;
+}
+.modal .btn-ver-mas:hover,
+#modal-general .btn-ver-mas:hover {
+  background: #362f8a !important;
+  transform: scale(1.05);
 }
 
 
