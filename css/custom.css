@@ -181,3 +181,57 @@
   color: #333;
 }
 
+/* Thumbnails: que se note que son clicables */
+.galeria-item a.rg-photo { display:block; cursor: zoom-in; }
+
+/* ===== Lightbox ===== */
+#rg-lightbox {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.9);
+  display: none;         /* se muestra por JS */
+  align-items: center; justify-content: center;
+  z-index: 1055;         /* por encima del modal bootstrap */
+}
+#rg-lightbox.open { display: flex; }
+
+#rg-lightbox .rg-stage {
+  max-width: 92vw; max-height: 88vh;
+  display: flex; align-items: center; justify-content: center;
+}
+#rg-lightbox img {
+  max-width: 92vw; max-height: 88vh;
+  object-fit: contain;   /* aquí se ve COMPLETA la foto */
+  border-radius: 8px;
+}
+
+/* Controles */
+#rg-lightbox .rg-close,
+#rg-lightbox .rg-prev,
+#rg-lightbox .rg-next {
+  position: absolute; color: #fff; background: rgba(0,0,0,.35);
+  border: 0; padding: 10px 14px; border-radius: 999px;
+  cursor: pointer; font-size: 20px; line-height: 1;
+  transition: background .2s ease;
+  user-select: none;
+}
+#rg-lightbox .rg-close { top: 16px; right: 16px; }
+#rg-lightbox .rg-prev { left: 16px; top: 50%; transform: translateY(-50%); }
+#rg-lightbox .rg-next { right: 16px; top: 50%; transform: translateY(-50%); }
+#rg-lightbox .rg-close:hover,
+#rg-lightbox .rg-prev:hover,
+#rg-lightbox .rg-next:hover { background: rgba(255,255,255,.2); }
+
+/* Indicador */
+#rg-lightbox .rg-counter {
+  position: absolute; bottom: 16px; left: 50%;
+  transform: translateX(-50%); color: #fff;
+  font-size: 14px; opacity: .9;
+}
+
+/* Clic fuera de la imagen también cierra */
+#rg-lightbox .rg-backdrop {
+  position: absolute; inset: 0;
+}
+
+
+
