@@ -771,6 +771,110 @@
 <!-- Contenedor donde se cargará el modal -->
 <div id="modal-container"></div>
 
+<!-- Lightbox global (UNA sola vez, fuera de cualquier modal) -->
+<div id="rg-lightbox" aria-hidden="true" role="dialog">
+  <div class="rg-backdrop" tabindex="-1"></div>
+  <button class="rg-close" type="button" aria-label="Cerrar">✕</button>
+  <button class="rg-prev"  type="button" aria-label="Anterior">‹</button>
+
+  <div class="rg-stage">
+    <img alt="">
+  </div>
+
+  <button class="rg-next"  type="button" aria-label="Siguiente">›</button>
+  <div class="rg-counter" aria-live="polite"></div>
+</div>
+
+<script>
+(function(){
+  // Estado del lightbox
+  const LB = {
+    open: false,
+    group: [],
+    index: 0,
+    els: {}
+  };
+
+  // Referencias del overlay global
+  function bindRefs(){
+    LB.els.box     = document.getElementById('rg-lightbox');
+    LB.els.stage   = LB.els.box.querySelector('.rg-stage img');
+    LB.els.prev    = LB.els.box.querySelector('.rg-prev');
+    LB.els.next    = LB.els.box.querySelector('.rg-next');
+    LB.els.close   = LB.els.box.querySelector('.rg-close');
+    LB.els.backdrop= LB.els.box.querySelector('.rg-backdrop');
+    LB.els.counter = LB.els.box.querySelector('.rg-counter');
+  }
+  bindRefs();
+
+  function show(index){
+    LB.index = ((index % LB.group.length) + LB.group.length) % LB.group.length; // wrap
+    LB.els.stage.src = LB.group[LB.index].href;
+    LB.els.stage.alt = LB.group[LB.index].alt || '';
+    LB.els.counter.textContent = (LB.index+1) + ' / ' + LB.group.length;
+  }
+  function openLightbox(groupArr, startIndex){
+    LB.group = groupArr;
+    LB.open = true;
+    LB.els.box.classList.add('open');
+    show(startIndex);
+  }
+  function closeLightbox(){
+    LB.open = false;
+    LB.els.box.classList.remove('open');
+    LB.els.stage.src = '';
+  }
+
+  // Controles
+  LB.els.prev.addEventListener('click', ()=> show(LB.index-1));
+  LB.els.next.addEventListener('click', ()=> show(LB.index+1));
+  LB.els.close.addEventListener('click', closeLightbox);
+  LB.els.backdrop.addEventListener('click', closeLightbox);
+
+  // Teclado
+  document.addEventListener('keydown', (e)=>{
+    if(!LB.open) return;
+    if(e.key === 'Escape') closeLightbox();
+    if(e.key === 'ArrowLeft') show(LB.index-1);
+    if(e.key === 'ArrowRight') show(LB.index+1);
+  });
+
+  // Swipe básico
+  let touchX = null;
+  LB.els.box.addEventListener('touchstart', e => touchX = e.changedTouches[0].clientX, {passive:true});
+  LB.els.box.addEventListener('touchend', e => {
+    if(touchX===null) return;
+    const dx = e.changedTouches[0].clientX - touchX;
+    if(Math.abs(dx) > 40) (dx>0 ? show(LB.index-1) : show(LB.index+1));
+    touchX = null;
+  }, {passive:true});
+
+  // Inicializador: cuando se abre cualquier modal, “arma” los grupos
+  $(document).on('shown.bs.modal', '#modal-general', function(){
+    // Recolecta grupos por data-rg-group
+    const photos = this.querySelectorAll('.rg-photo');
+    const groups = {};
+    photos.forEach(a=>{
+      const group = a.getAttribute('data-rg-group') || 'default';
+      const alt = (a.querySelector('img')?.alt) || '';
+      if(!groups[group]) groups[group] = [];
+      groups[group].push({href: a.getAttribute('href'), alt});
+    });
+
+    // Delegación de click para abrir
+    this.querySelectorAll('.rg-photo').forEach((a, idx)=>{
+      a.addEventListener('click', function(ev){
+        ev.preventDefault();
+        const groupName = a.getAttribute('data-rg-group') || 'default';
+        const index = parseInt(a.getAttribute('data-rg-index') || '0', 10);
+        openLightbox(groups[groupName], index);
+      });
+    }, {once:true});
+  });
+
+})();
+</script>
+
 <!-- Script para cargar contenido desde archivos externos -->
 <script>
   function cargarModal(nombreArchivo) {
@@ -809,6 +913,7 @@ document.querySelectorAll('.box-video').forEach(box=>{
     
 </body>
 </html>
+
 
 
 
