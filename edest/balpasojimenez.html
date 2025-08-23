@@ -26,38 +26,67 @@
           <p><strong>Cómo llegar:</strong> Desde Mao, toma la carretera hacia la comunidad de Paso Jiménez. El balneario se encuentra próximo al puente local, y los residentes pueden guiarte fácilmente hacia el lugar.</p>
         </div>
 
-        <!-- Galería expandible -->
-        <button class="btn btn-outline-primary mb-3"
-                data-toggle="collapse"
-                data-target="#galeria-pasojimenez"
-                aria-expanded="false"
-                aria-controls="galeria-pasojimenez">
-          Ver más imágenes
-        </button>
+        <!-- Botón galería (uniforme) -->
+        <div class="text-center my-4">
+          <button class="btn-ver-mas"
+                  data-toggle="collapse"
+                  data-target="#galeria-pasojimenez"
+                  aria-expanded="false"
+                  aria-controls="galeria-pasojimenez">
+            📷 Ver más imágenes
+          </button>
+        </div>
 
-        <div class="collapse" id="galeria-pasojimenez">
+        <!-- Galería (con rg-photo y data-rg-index) -->
+        <div class="collapse galeria-grid" id="galeria-pasojimenez">
           <div class="row">
-            <div class="col-md-6 mb-2">
-              <img src="img/pasojimenez_extra1.jpg" class="img-fluid rounded" alt="Imagen adicional 1 del Balneario Paso Jiménez">
+
+            <div class="col mb-3">
+              <figure class="galeria-item">
+                <a href="img/pasojimenez_extra1.jpg"
+                   class="rg-photo"
+                   data-rg-group="paso-jimenez"
+                   data-rg-index="0">
+                  <img src="img/pasojimenez_extra1.jpg"
+                       class="img-fluid rounded"
+                       alt="Balneario Paso Jiménez - Foto 1">
+                </a>
+              </figure>
             </div>
-            <div class="col-md-6 mb-2">
-              <img src="img/pasojimenez_extra2.jpg" class="img-fluid rounded" alt="Imagen adicional 2 del Balneario Paso Jiménez">
+
+            <div class="col mb-3">
+              <figure class="galeria-item">
+                <a href="img/pasojimenez_extra2.jpg"
+                   class="rg-photo"
+                   data-rg-group="paso-jimenez"
+                   data-rg-index="1">
+                  <img src="img/pasojimenez_extra2.jpg"
+                       class="img-fluid rounded"
+                       alt="Balneario Paso Jiménez - Foto 2">
+                </a>
+              </figure>
             </div>
+
+            <!-- Agrega más items aumentando data-rg-index: 2, 3, 4... -->
           </div>
         </div>
 
-        <!-- Video (16:9)    <div class="embed-responsive embed-responsive-16by9 mt-4">
-          <iframe class="embed-responsive-item"
-                  src="https://www.youtube.com/embed/TUCODIGO"
-                  allowfullscreen
-                  title="Video de Paso Jiménez"></iframe>
-        </div>-->
-     
-<div class="embed-responsive embed-responsive-16by9 mt-4 video-wrapper">
-  <div class="video-overlay">
-    <p>🎬 Video en desarrollo</p>
-  </div>
-</div>
+        <!-- Video -->
+        <h5 class="video-title mt-5 mb-3 text-center">
+          🎬 Video del recorrido por Paso Jiménez
+        </h5>
+
+        <!-- Opción A: overlay (como lo tenías) -->
+        <div class="video-wrapper">
+          <!-- <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/TUCODIGO?rel=0" allowfullscreen title="Video de Paso Jiménez"></iframe>
+        </div> -->
+          <div class="video-overlay">
+            <p>🎬 Video en desarrollo</p>
+          </div>
+        </div>
+
+        
 
         <!-- Mapa responsivo -->
         <div class="mt-4">
@@ -71,9 +100,7 @@
               title="Mapa de Paso Jiménez"></iframe>
           </div>
         </div>
-
       </div><!-- /.modal-body -->
-
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
