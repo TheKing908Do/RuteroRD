@@ -176,6 +176,29 @@
   z-index: 2;
 }
 
+.btn-ver-mas {
+  display: inline-block;
+  margin: 0 auto;
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: #4a3fb3;  /* color principal */
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-ver-mas:hover {
+  background-color: #362f8a;  /* tono más oscuro al pasar el mouse */
+  transform: scale(1.05);     /* efecto de zoom ligero */
+}
+
+
+
 
 
 
