@@ -201,6 +201,45 @@
   margin-right: auto !important;
 }
 
+/* ===== Galería responsiva bonita (para los collapse con .galeria-grid) ===== */
+
+/* Por defecto (móviles): 1 por fila */
+.modal .collapse.galeria-grid[id^="galeria-"] .row > [class*="col"] {
+  flex: 0 0 100% !important;
+  max-width: 100% !important;
+  padding-left: 8px !important;
+  padding-right: 8px !important;
+}
+
+/* Desde 768px (tablets/desktop): 2 por fila */
+@media (min-width: 768px) {
+  .modal .collapse.galeria-grid[id^="galeria-"] .row > [class*="col"] {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+  }
+}
+
+/* Tarjeta de imagen con relación 16:9 y recorte elegante */
+.modal .collapse.galeria-grid .galeria-item {
+  aspect-ratio: 16 / 9;           /* mantiene alto consistente */
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #eee;
+}
+
+/* Imagen llena el contenedor sin deformarse */
+.modal .collapse.galeria-grid .galeria-item img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+/* Separación entre imágenes */
+.modal .collapse.galeria-grid .row > [class*="col"] {
+  margin-bottom: 16px !important;
+}
 
 
 
