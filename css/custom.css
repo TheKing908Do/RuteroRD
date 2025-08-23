@@ -164,16 +164,18 @@
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: rgba(0,0,0,1); /* más oscuro para contraste */
+  background: rgba(0,0,0,0.75); 
   color: #fff;
-  font-size: 3rem;       /* más grande */
-  font-weight: bold;       /* más grueso */
+  font-size: clamp(1.2rem, 2.5vw, 2rem); 
+  font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  text-shadow: 1px 1px 4px rgba(0,0,0,1); /* hace resaltar el texto */
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.9); 
   z-index: 2;
+  padding: 10px;
+  border-radius: 6px; 
 }
 
 
