@@ -1,4 +1,4 @@
-<!-- Modal Los Palitos de las Brujas-->
+<!-- Modal Ruta Los Palitos de las Brujas -->
 <div class="modal fade" id="modal-general" tabindex="-1" role="dialog" aria-labelledby="title-palitosbrujas" aria-hidden="true">
   <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable" role="document">
     <div class="modal-content">
@@ -13,7 +13,11 @@
       <div class="modal-body">
 
         <!-- Imagen destacada -->
-        <img src="img/lpdlb.jpg" class="img-fluid rounded mb-3" alt="Imagen destacada" style="max-height:60vh; object-fit:cover; width:100%;">
+        <img 
+          src="img/lpdlb.jpg" 
+          class="img-fluid rounded mb-3" 
+          alt="Imagen destacada Los Palitos de las Brujas"
+          style="max-height:60vh; object-fit:cover; width:100%;">
 
         <!-- Texto principal -->
         <div class="p-3 border rounded bg-light mb-3">
@@ -23,56 +27,73 @@
 
         <!-- Botón galería -->
         <div class="text-center my-4">
-          <button class="btn-ver-mas" data-toggle="collapse" data-target="#galeria-palitos" aria-expanded="false" aria-controls="galeria-palitos">
+          <button class="btn-ver-mas" 
+                  data-toggle="collapse" 
+                  data-target="#galeria-palitos" 
+                  aria-expanded="false" 
+                  aria-controls="galeria-palitos">
             📷 Ver más imágenes
           </button>
         </div>
 
         <!-- Galería -->
-<div class="collapse galeria-grid" id="galeria-palitos">
-  <div class="row">
-    <div class="col mb-3">
-      <figure class="galeria-item">
-        <a href="img/palitos2.jpg" class="rg-photo" data-rg-group="palitos-brujas" data-rg-index="0">
-          <img src="img/palitos2.jpg" class="img-fluid rounded" alt="Los Palitos de las Brujas - Foto 1">
-        </a>
-      </figure>
-    </div>
+        <div class="collapse galeria-grid" id="galeria-palitos">
+          <div class="row">
+            <div class="col mb-3">
+              <figure class="galeria-item">
+                <a href="img/palitos2.jpg" class="rg-photo" data-rg-group="palitos-brujas" data-rg-index="0">
+                  <img src="img/palitos2.jpg" class="img-fluid rounded" alt="Los Palitos de las Brujas - Foto 1">
+                </a>
+              </figure>
+            </div>
 
-    <div class="col mb-3">
-      <figure class="galeria-item">
-        <a href="img/palitos3.jpg" class="rg-photo" data-rg-group="palitos-brujas" data-rg-index="1">
-          <img src="img/palitos3.jpg" class="img-fluid rounded" alt="Los Palitos de las Brujas - Foto 2">
-        </a>
-      </figure>
-    </div>
-    
-    <!-- Agregar más: data-rg-index en 0,1,2... -->
-  </div>
-</div>
-
-
-        <!-- Texto -->
-       <!-- Video -->
-<h5 class="video-title mt-5 mb-3 text-center">
-  🎬 Video del recorrido
-</h5>
-
-<div class="video-wrapper">
-  <iframe 
-    src="https://www.youtube-nocookie.com/embed/FZkkW00UZIA?rel=0&modestbranding=1"
-    title="Video recorrido Palitos de las Brujas"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    allowfullscreen
-    loading="lazy">
-  </iframe>
-
-  <!-- <div class="video-overlay">
-    🎬 Video en desarrollo
-  </div> -->
-</div>
+            <div class="col mb-3">
+              <figure class="galeria-item">
+                <a href="img/palitos3.jpg" class="rg-photo" data-rg-group="palitos-brujas" data-rg-index="1">
+                  <img src="img/palitos3.jpg" class="img-fluid rounded" alt="Los Palitos de las Brujas - Foto 2">
+                </a>
+              </figure>
+            </div>
+            
+            <!-- Agregar más imágenes con data-rg-index incremental -->
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
+
+        <!-- Video -->
+        <h5 class="video-title mt-5 mb-3 text-center">
+          🎬 Video del recorrido
+        </h5>
+
+        <div class="video-wrapper">
+          <iframe 
+            src="https://www.youtube-nocookie.com/embed/FZkkW00UZIA?rel=0&modestbranding=1"
+            title="Video recorrido Palitos de las Brujas"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+            loading="lazy">
+          </iframe>
+
+          <!-- <div class="video-overlay">
+            🎬 Video en desarrollo
+          </div>  -->
+        </div>
+
+        <!-- Mapa -->
+        <div class="mt-4">
+          <h5><strong>Ubicación exacta:</strong></h5>
+          <div class="map-responsive">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6516.041715515108!2d-71.0210198104022!3d19.350139905472048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eb1ad8ab3133025%3A0x3d6772d752a9975!2sBalneario%20Los%20Palitos%20Las%20Brujas!5e1!3m2!1ses-419!2sdo!4v1754327894236!5m2!1ses-419!2sdo"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen
+              title="Mapa Los Palitos de las Brujas">
+            </iframe>
+          </div>
+        </div>
+
+      </div><!-- /.modal-body -->
+
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
