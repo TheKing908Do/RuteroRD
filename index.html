@@ -872,6 +872,21 @@
     }, {once:true});
   });
 
+    function openLightbox(groupArr, startIndex){
+  LB.group = groupArr;
+  LB.open = true;
+  document.body.classList.add('rg-noscroll');   // <— evita scroll del fondo
+  LB.els.box.classList.add('open');
+  show(startIndex);
+}
+
+function closeLightbox(){
+  LB.open = false;
+  LB.els.box.classList.remove('open');
+  document.body.classList.remove('rg-noscroll'); // <— reactivar scroll
+  LB.els.stage.src = '';
+}
+
 })();
 </script>
 
@@ -890,6 +905,10 @@
   }
 </script>
 
+
+
+
+    
 <script>
 document.querySelectorAll('.box-video').forEach(box=>{
   const cover = box.querySelector('.bg-video');
@@ -913,6 +932,7 @@ document.querySelectorAll('.box-video').forEach(box=>{
     
 </body>
 </html>
+
 
 
 
