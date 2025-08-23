@@ -149,6 +149,57 @@
 }
 
 
+/* ====== GALERÍA: que las imágenes ocupen el 100% del modal ====== */
+/* Cubre cualquier collapse cuya id empiece por "galeria-" dentro de un modal */
+.modal .collapse[id^="galeria-"] .row > [class^="col"],
+.modal .collapse[id^="galeria-"] .row > [class*=" col"] {
+  flex: 0 0 100% !important;
+  max-width: 100% !important;
+}
+
+.modal .collapse[id^="galeria-"] img {
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  margin-bottom: 14px !important;
+  border-radius: 6px !important;
+  object-fit: cover !important;
+}
+
+/* ====== BOTÓN "Ver más imágenes": centrado y llamativo ====== */
+/* Estila cualquier botón que abre un collapse cuyo id empiece por "galeria-" */
+.modal [data-toggle="collapse"][data-target^="#galeria-"],
+.modal [data-bs-toggle="collapse"][data-bs-target^="#galeria-"] {
+  display: inline-block !important;
+  margin: 20px auto !important;
+  padding: 12px 28px !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  background: #4a3fb3 !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 6px !important;
+  cursor: pointer !important;
+  transition: all .25s ease !important;
+}
+
+.modal [data-toggle="collapse"][data-target^="#galeria-"]:hover,
+.modal [data-bs-toggle="collapse"][data-bs-target^="#galeria-"]:hover {
+  background: #362f8a !important;
+  transform: scale(1.05);
+}
+
+/* Centrado del botón sin tocar HTML */
+.modal [data-toggle="collapse"][data-target^="#galeria-"],
+.modal [data-bs-toggle="collapse"][data-bs-target^="#galeria-"] {
+  /* el contenedor padre puede no estar centrado; forzamos centrado */
+  display: block !important;
+  text-align: center !important;
+  width: max-content !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
 
 
 
