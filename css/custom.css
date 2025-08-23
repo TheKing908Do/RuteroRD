@@ -181,13 +181,12 @@
 
 .btn-ver-mas {
   display: inline-block;
-  margin: 0 auto;
-  padding: 12px 28px;
+  margin: 20px auto;       /* espacio arriba/abajo y centrado */
+  padding: 12px 28px;      /* más grande y cómodo */
   font-size: 1rem;
   font-weight: bold;
   text-transform: uppercase;
-  text-align: center;
-  background-color: #4a3fb3;  /* color principal */
+  background-color: #4a3fb3;  /* color acorde a tu tema */
   color: #fff;
   border: none;
   border-radius: 6px;
@@ -197,8 +196,9 @@
 
 .btn-ver-mas:hover {
   background-color: #362f8a;  /* tono más oscuro al pasar el mouse */
-  transform: scale(1.05);     /* efecto de zoom ligero */
+  transform: scale(1.05);     /* pequeño efecto de zoom */
 }
+
 
 
 
