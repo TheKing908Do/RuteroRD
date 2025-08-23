@@ -279,67 +279,76 @@ body.rg-noscroll { overflow: hidden; }
   }
 }
 
-/* Alcance */
-.owl-carousel.rutas-destacadas { position: relative; }
-.owl-carousel.rutas-destacadas .item .image { position: relative; overflow: hidden; border-radius: 10px; }
+/* ===== Mejora UX para el carrusel en #featured (sin tocar JS) ===== */
 
-/* Flechas */
-.owl-carousel.rutas-destacadas .owl-nav { pointer-events:none; }
-.owl-carousel.rutas-destacadas .owl-nav button.owl-prev,
-.owl-carousel.rutas-destacadas .owl-nav button.owl-next{
-  pointer-events:auto;
-  position:absolute; top:50%; transform:translateY(-50%);
-  z-index:2; width:44px; height:44px; border-radius:999px; border:0;
-  background:rgba(0,0,0,.55); color:#fff; display:grid; place-items:center;
-  transition:background .2s, transform .2s, opacity .2s;
-}
-.owl-carousel.rutas-destacadas .owl-nav button.owl-prev{ left:8px; }
-.owl-carousel.rutas-destacadas .owl-nav button.owl-next{ right:8px; }
-.owl-carousel.rutas-destacadas .owl-nav button:hover{
-  background:rgba(0,0,0,.75); transform:translateY(-50%) scale(1.06);
-}
-@media (hover:hover){
-  .owl-carousel.rutas-destacadas .owl-nav button{ opacity:0; }
-  .owl-carousel.rutas-destacadas:hover .owl-nav button{ opacity:1; }
-}
-@media (hover:none){
-  .owl-carousel.rutas-destacadas .owl-nav button{ opacity:1; }
-}
+/* 0) Salvavidas: si por cualquier motivo Owl no termina de cargar,
+      no dejes la sección invisible (Owl oculta .owl-carousel hasta .owl-loaded) */
+#featured .owl-carousel:not(.owl-loaded) { display: block; }
 
-/* Dots */
-.owl-carousel.rutas-destacadas .owl-dots{ text-align:center; margin-top:10px; }
-.owl-carousel.rutas-destacadas .owl-dots .owl-dot span{
-  width:8px; height:8px; margin:5px 4px; border-radius:50%;
-  display:inline-block; background:#cfd6ff; transition:transform .2s, background .2s;
+/* 1) Vista y pista lateral: degradados que sugieren que hay más contenido */
+#featured .owl-carousel .owl-stage-outer {
+  position: relative;
+  border-radius: 10px;           /* opcional: redondeo agradable */
+  overflow: hidden;              /* evita desbordes al redondear */
 }
-.owl-carousel.rutas-destacadas .owl-dots .owl-dot.active span{
-  background:#4a3fb3; transform:scale(1.25);
+#featured .owl-carousel .owl-stage-outer::before,
+#featured .owl-carousel .owl-stage-outer::after{
+  content:""; position:absolute; top:0; bottom:0; width:44px; z-index:2;
+  pointer-events:none;
 }
-
-/* Degradados laterales (cambia blanco si tu fondo no es #fff) */
-.owl-carousel.rutas-destacadas .owl-stage-outer::before,
-.owl-carousel.rutas-destacadas .owl-stage-outer::after{
-  content:""; position:absolute; top:0; bottom:0; width:44px; z-index:1; pointer-events:none;
-}
-.owl-carousel.rutas-destacadas .owl-stage-outer::before{
+/* si tu fondo no es blanco, cambia rgba(255,255,255,1) por el color de fondo */
+#featured .owl-carousel .owl-stage-outer::before{
   left:0;  background:linear-gradient(90deg, rgba(255,255,255,1), rgba(255,255,255,0));
 }
-.owl-carousel.rutas-destacadas .owl-stage-outer::after{
+#featured .owl-carousel .owl-stage-outer::after{
   right:0; background:linear-gradient(270deg, rgba(255,255,255,1), rgba(255,255,255,0));
 }
 
-/* Pista “Desliza →” (se oculta con clase desde JS) */
-.owl-carousel.rutas-destacadas::after{
+/* 2) Flechas más visibles (cuando Owl las genera) */
+#featured .owl-carousel .owl-nav { pointer-events: none; }
+#featured .owl-carousel .owl-nav button.owl-prev,
+#featured .owl-carousel .owl-nav button.owl-next{
+  pointer-events:auto;
+  position:absolute; top:50%; transform:translateY(-50%);
+  width:44px; height:44px; border-radius:999px; border:0;
+  background:rgba(0,0,0,.55); color:#fff;
+  display:grid; place-items:center;
+  z-index: 3;
+  transition: background .2s ease, transform .2s ease, opacity .2s ease;
+}
+#featured .owl-carousel .owl-nav button.owl-prev{ left:8px; }
+#featured .owl-carousel .owl-nav button.owl-next{ right:8px; }
+#featured .owl-carousel .owl-nav button:hover{
+  background:rgba(0,0,0,.75);
+  transform:translateY(-50%) scale(1.06);
+}
+/* En desktop aparecen al pasar el mouse; en móvil siempre visibles */
+@media (hover:hover){
+  #featured .owl-carousel .owl-nav button{ opacity:0; }
+  #featured .owl-carousel:hover .owl-nav button{ opacity:1; }
+}
+@media (hover:none){
+  #featured .owl-carousel .owl-nav button{ opacity:1; }
+}
+
+/* 3) Dots más claros (cuando Owl los genera) */
+#featured .owl-carousel .owl-dots{ text-align:center; margin-top:10px; }
+#featured .owl-carousel .owl-dots .owl-dot span{
+  width:8px; height:8px; margin:5px 4px; border-radius:50%;
+  display:inline-block; background:#cfd6ff;
+  transition: transform .2s ease, background .2s ease;
+}
+#featured .owl-carousel .owl-dots .owl-dot.active span{
+  background:#4a3fb3; transform:scale(1.25);
+}
+
+/* 4) Pista textual “Desliza →” (solo CSS, no interfiere con el template) */
+#featured .owl-carousel::after{
   content:"Desliza \2192";
   position:absolute; bottom:12px; right:14px;
-  background:rgba(0,0,0,.55); color:#fff; padding:6px 10px; border-radius:999px; font-size:12px; z-index:2;
-  animation:rg-hint 3.2s ease-in-out forwards;
+  background:rgba(0,0,0,.55); color:#fff;
+  padding:6px 10px; border-radius:999px; font-size:12px; z-index:3;
+  animation: rg-hint-fade 3.2s ease-in-out forwards;
 }
-.owl-carousel.rutas-destacadas.rg-hide-hint::after{ display:none; }
-@keyframes rg-hint{ 0%,85%{opacity:1;} 100%{opacity:0; visibility:hidden;} }
-
-/* Viewport redondeado */
-.owl-carousel.rutas-destacadas .owl-stage-outer{ border-radius:10px; }
-
-
+@keyframes rg-hint-fade { 0%,85%{opacity:1;} 100%{opacity:0; visibility:hidden;} }
 
