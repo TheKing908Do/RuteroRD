@@ -82,17 +82,6 @@
   margin: 0 auto;
 }
 
-/* Video wrapper y overlay */
-.video-wrapper {
-  position: relative;
-  background: #f0f0f0;
-  border-radius: 6px;
-  overflow: hidden;
-  min-height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 .video-overlay {
   position: absolute;
   top:0; left:0;
@@ -242,6 +231,32 @@
 }
 
 
+/* ===== Video Wrapper más cuadrado y responsivo ===== */
+.video-wrapper {
+  position: relative;
+  padding-bottom: 75%;   /* 4:3 → más cuadrado que 16:9 */
+  height: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #000;      /* fondo negro mientras carga */
+  margin-top: 30px;      /* espacio extra respecto a la galería */
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 8px;
+}
+
+/* Texto encima del video */
+.video-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+}
 
 
 
