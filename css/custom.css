@@ -1,11 +1,11 @@
-/* === RuteroRD – ajustes puntuales === */
+/* === CSS Custom RuteroRD === */
 
-/* 1) Sidebar más transparente para que se vea el fondo */
+/* 1) Sidebar Cambio */
 .sidebar-navigation{
-  background-color: rgbargba(0, 174, 239, 0.7) !important; /* antes 0.9 */
+  background-color: rgba(0, 174, 239, 0.7) !important; /* corregido */
 }
 
-/* 2) Logo: caja y centrado */
+/* 2) Logo */
 .sidebar-navigation .logo {
   background: transparent !important;
   height: 160px !important;
@@ -14,71 +14,32 @@
   align-items: center !important;
   justify-content: center !important;
   text-align: center !important;
-
-  /* 👉 mover hacia abajo */
-  margin-top: 60px !important;  /* prueba con 20px, ajusta a tu gusto */
+  margin-top: 60px !important; 
+}
+.sidebar-navigation .logo a{ border:0 !important; height:auto !important; width:100% !important; display:block !important; text-decoration:none !important; }
+.sidebar-navigation .logo img{ display:block !important; max-width:130% !important; max-height:200px !important; height:auto !important; margin:0 auto 6px auto !important; }
+.sidebar-navigation .logo small{ display:block !important; font-size:13px !important; letter-spacing:.5px !important; color:#eaf6ff !important; font-weight:600 !important; margin-top:-20px !important; }
+@media (min-height:900px){
+  .sidebar-navigation .logo{ height:180px !important; }
+  .sidebar-navigation .logo img{ max-height:180px !important; }
 }
 
-/* Quita el borde y restricciones del <a> original del template */
-.sidebar-navigation .logo a{
-  border: 0 !important;
-  height: auto !important;
-  width: 100% !important;
-  display: block !important;
-  text-decoration: none !important;
-}
-
-/* Imagen del logo más grande y responsiva */
-.sidebar-navigation .logo img{
-  display: block !important;
-  max-width: 130% !important;
-  max-height: 200px !important;   /* tamaño visible del logo */
-  height: auto !important;
-  margin: 0 auto 6px auto !important;
-}
-
-/* Texto bajo el logo */
-.sidebar-navigation .logo small{
-  display: block !important;
-  font-size: 13px !important;
-  letter-spacing: .5px !important;
-  color: #eaf6ff !important;
-  font-weight: 600 !important;
-
-  margin-top: -20px !important; 
-}
-
-/* En pantallas altas, permite un logo aún mayor */
-@media (min-height: 900px){
-  .sidebar-navigation .logo{ height: 180px !important; }
-  .sidebar-navigation .logo img{ max-height: 180px !important; }
-}
-
-/* 3) Ocultar el buscador del menú que aparece arriba */
 .sidebar-navigation input[type="text"],
 .sidebar-navigation input[type="search"],
 .sidebar-navigation .search,
 .sidebar-navigation .menu-search{
-  display: none !important;
+  display:none !important;
 }
 
-/* 4) Quitar puntitos en la barra de iconos del footer */
 .sidebar-navigation .social-icons,
 .sidebar-navigation .social-icons li{
-  list-style: none !important;
+  list-style:none !important;
 }
 
-/* 5) Pequeños toques de legibilidad del menú */
-.sidebar-navigation nav a{
-  color: #eef8ff !important;
-  opacity: .95 !important;
-}
-.sidebar-navigation nav a:hover{
-  opacity: 1 !important;
-  text-decoration: none !important;
-}
+.sidebar-navigation nav a{ color:#eef8ff !important; opacity:.95 !important; }
+.sidebar-navigation nav a:hover{ opacity:1 !important; text-decoration:none !important; }
 
-/* === Ajustes Modal General: imágenes, video y mapa responsivos === */
+/* === Ajustes Modal General */
 #modal-general .modal-body img,
 #modal-general .modal-body iframe {
   max-width: 100%;
@@ -86,96 +47,68 @@
   display: block;
 }
 
+/* Imagen */
 #modal-general .modal-body img.img-fluid {
-  max-height: 60vh;   /* altura máxima de la imagen destacada */
+  max-height: 60vh;
   object-fit: cover;
   width: 100%;
 }
 
+/* Mapa */
 .map-responsive {
   position: relative;
   padding-bottom: 56.25%; /* 16:9 */
-  height: 0;
-  overflow: hidden;
-}
-.map-responsive iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-/* Que imágenes e iframes dentro del modal no se salgan */
-#modal-general .modal-body img,
-#modal-general .modal-body iframe {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* La imagen principal con altura máxima para que no desborde */
-#modal-general .modal-body img.img-fluid {
-  max-height: 60vh; /* 60% del alto de la ventana */
-  object-fit: cover;
-  width: 100%;
-}
-
-/* El mapa se hace responsivo */
-.map-responsive {
-  position: relative;
-  padding-bottom: 56.25%; /* proporción 16:9 */
   height: 0;
   overflow: hidden;
   border-radius: .25rem;
 }
 .map-responsive iframe {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
+  top:0; left:0;
+  width:100%; height:100%;
+  border:0;
 }
+
+/* Imágenes pequeñas específicas */
 .item img[src*="mochila.jpg"],
 .item img[src*="tiempo.jpg"] {
-  max-width: 200px;   /* ancho máximo */
-  max-height: 200px;  /* alto máximo */
-  width: 100%;        /* responsivo */
-  height: auto;       /* mantiene proporción */
-  object-fit: cover;  /* recorta si es necesario */
-  border-radius: 6px; /* opcional */
+  max-width: 200px;
+  max-height: 200px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 6px;
   display: block;
   margin: 0 auto;
 }
 
+/* Video wrapper y overlay */
 .video-wrapper {
   position: relative;
-  background: #f0f0f0; /* fondo gris clarito */
+  background: #f0f0f0;
   border-radius: 6px;
   overflow: hidden;
-  min-height: 200px; /* asegura altura mínima */
+  min-height: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
 .video-overlay {
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.75); 
-  color: #fff;
-  font-size: clamp(1.2rem, 2.5vw, 2rem); 
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.9); 
-  z-index: 2;
-  padding: 10px;
-  border-radius: 6px; 
+  top:0; left:0;
+  width:100%; height:100%;
+  background: rgba(0,0,0,0.75);
+  color:#fff;
+  font-size: clamp(1.2rem, 2.5vw, 2rem);
+  font-weight:bold;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  text-shadow:2px 2px 6px rgba(0,0,0,0.9);
+  z-index:2;
+  padding:10px;
+  border-radius:6px;
 }
 
 
