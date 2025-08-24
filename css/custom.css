@@ -151,37 +151,5 @@ body.rg-noscroll{ overflow:hidden; }
 }
 
 
-/* ===== HOTFIX: VIDEO EN MODAL ===== */
-/* Si aún tienes clases de Bootstrap tipo .embed-responsive, neutralízalas SOLO dentro del modal */
-.modal .embed-responsive{ position:relative !important; padding:0 !important; height:auto !important; }
-.modal .embed-responsive .embed-responsive-item{ position:absolute; inset:0; width:100%; height:100%; }
-
-/* Nuestro wrapper ocupa siempre todo y el iframe llena 100% */
-.modal .video-wrapper{ position:relative; width:100%; aspect-ratio:16/9; background:#000; border-radius:12px; overflow:hidden; }
-.modal .video-wrapper iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; display:block; }
-
-/* Para eliminar bandas: zoom suave (recorta un poco). Ajusta 1.05–1.25 si hace falta */
-.modal .video-wrapper.is-zoom iframe{ transform:scale(1.14); transform-origin:50% 50%; }
-
-/* Si tu video NO es 16:9, usa uno de estos ratios */
-.modal .video-wrapper.ratio-21x9{ aspect-ratio:21/9; }
-.modal .video-wrapper.ratio-4x3 { aspect-ratio:4/3; }
-
-/* Por si el overlay se queda activo por error, que no bloquee clicks */
-.modal .video-overlay{ pointer-events:none; }
-
-/* ===== HOTFIX: MAPA INTERACTIVO EN MODAL ===== */
-.modal .map-responsive{ position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:.25rem;
-  pointer-events:auto; touch-action:pan-x pan-y; /* habilita gestos */
-}
-.modal .map-responsive iframe{
-  position:absolute; inset:0; width:100%; height:100%; border:0;
-  pointer-events:auto !important; touch-action:pan-x pan-y;
-}
-
-/* Asegura z-index correcto del modal sobre backdrop (a veces Bootstrap themes lo cambian) */
-.modal{ z-index:1050; }
-.modal-backdrop{ z-index:1040; }
-
 
 
