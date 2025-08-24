@@ -1,11 +1,3 @@
-/* 
-
-Sentra Template
-
-https://templatemo.com/tm-518-sentra
-
-*/
-
 body {
   font-family: 'Open Sans', sans-serif;
 }
@@ -1074,13 +1066,13 @@ header {
   }
 
 
-/* ====== AJUSTE PARA QUE EL CONTENIDO NO SE META DEBAJO DEL SIDEBAR ====== */
+/* ====== AJUSTE DEL SIDEBAR ====== */
 .page-content {
   margin-left: 250px;
   padding: 20px;
 }
 
-/* ===== Estilos para mejorar legibilidad del texto en la presentación ===== */
+/* ===== Mejorar legibilidad del texto ===== */
 #video {
   background-color: #ffffff;
   padding: 40px 20px;
@@ -1107,18 +1099,18 @@ header {
   text-align: center;
 }
 
-/* Ajustes para Tips & Consejos en móviles */
+/* Ajustes Tips & Consejos */
 @media (max-width: 768px) {
   .categories-list, .categories {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px; /* espacio entre categorías */
+    gap: 10px; 
   }
 
   .categories-list li, .categories li {
-    flex: 1 1 calc(50% - 10px); /* dos columnas en móviles */
+    flex: 1 1 calc(50% - 10px); 
     text-align: center;
-    font-size: 14px; /* texto más pequeño */
+    font-size: 14px; 
   }
 
   .categories-list a, .categories a {
@@ -1135,7 +1127,7 @@ header {
 .slider-icons i {
   max-width: 100%;
   height: auto;
-  font-size: clamp(16px, 4vw, 40px); /* Para iconos de fuente */
+  font-size: clamp(16px, 4vw, 40px); 
 }
 
 /* Iconos del footer */
@@ -1146,17 +1138,11 @@ header {
   font-size: clamp(14px, 3.5vw, 36px);
 }
 
-/* Asegura espacio adecuado en pantallas pequeñas */
+
 @media (max-width: 600px) {
   .slider-icons i,
   .footer-icons i {
     font-size: 20px;
   }
 }
-
-
-
-
-
-
 
