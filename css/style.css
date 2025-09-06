@@ -70,3 +70,7 @@ textarea{min-height:120px;resize:vertical}
 @media (max-width:680px){
   .grid.routes, .grid.tips, .grid.gallery{grid-template-columns:1fr}
 }
+.logo img {
+  height: 90px;   /* aumenta el tamaño */
+  width: auto;    /* mantiene proporción */
+}
