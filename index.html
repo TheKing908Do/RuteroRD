@@ -4,234 +4,49 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>RuteroRD — Rutas y Aventuras en República Dominicana</title>
-  <meta name="description" content="Descubre rutas, excursiones y consejos para viajar por República Dominicana. Mapas, guías, tips y contacto en un solo lugar." />
+  <meta name="description" content="Descubre rutas, excursiones y consejos para viajar por República Dominicana." />
   <meta name="theme-color" content="#0ea5e9" />
-  <meta name="color-scheme" content="light dark" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <style>
-    :root{
-      --bg: #0b1220;           /* fondo principal (oscuro elegante) */
-      --bg-alt:#0f172a;        /* fondo de secciones */
-      --card:#111827;          /* tarjetas */
-      --text:#e5e7eb;          /* texto base */
-      --muted:#94a3b8;         /* texto secundario */
-      --brand:#0ea5e9;         /* celeste (marca) */
-      --brand-2:#22d3ee;       /* acento gradiente */
-      --ok:#22c55e;            
-      --warn:#f59e0b;
-      --err:#ef4444;
-      --radius: 18px;
-      --shadow: 0 10px 30px rgba(0,0,0,.25);
-      --maxw: 1100px;
-    }
-    *{ box-sizing: border-box }
-    html{ scroll-behavior:smooth }
-    body{
-      margin:0; font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      color:var(--text); background:radial-gradient(1200px 800px at 10% -10%, rgba(34,211,238,.08), transparent 60%),
-                         radial-gradient(1000px 600px at 110% 10%, rgba(14,165,233,.12), transparent 50%),
-                         var(--bg);
-      line-height:1.6;
-    }
-    img{ max-width:100%; display:block }
-    a{ color:inherit; text-decoration:none }
-    .container{ width:100%; max-width:var(--maxw); margin-inline:auto; padding-inline:1rem }
-    .section{ padding: clamp(3rem, 6vw, 5rem) 0 }
-    .card{ background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.00)); border:1px solid rgba(148,163,184,.18); border-radius:var(--radius); box-shadow:var(--shadow) }
-    .btn{ display:inline-flex; align-items:center; gap:.6rem; padding:.9rem 1.1rem; border-radius:14px; border:1px solid rgba(148,163,184,.3); background:linear-gradient(180deg, rgba(34,211,238,.1), rgba(14,165,233,.08)); color:white; font-weight:600 }
-    .btn:hover{ transform: translateY(-1px); filter: brightness(1.05) }
-    .btn.secondary{ background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03)); }
-    .tag{ font-size:.8rem; color:var(--brand-2); background:rgba(34,211,238,.1); border:1px solid rgba(34,211,238,.25); padding:.2rem .5rem; border-radius:10px }
-
-    /* Header */
-    .skip{ position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden }
-    .skip:focus{ left:1rem; top:1rem; width:auto; height:auto; padding:.5rem .75rem; background:#111827; border-radius:10px }
-    header{ position:sticky; top:0; z-index:50; backdrop-filter: saturate(180%) blur(10px); background:rgba(11,18,32,.6); border-bottom:1px solid rgba(148,163,184,.15) }
-    .nav{ display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:.8rem 0 }
-    .logo{ display:flex; align-items:center; gap:.6rem; font-weight:800; letter-spacing:.2px }
-    .logo .dot{ width:10px; height:10px; border-radius:50%; background:linear-gradient(130deg, var(--brand), var(--brand-2)) }
-    .menu{ display:flex; align-items:center; gap:1rem }
-    .menu a{ padding:.5rem .8rem; border-radius:10px; color:var(--muted) }
-    .menu a.active, .menu a:hover{ color:#fff; background:rgba(255,255,255,.05) }
-    .hamb{ display:none; background:none; border:0; color:var(--text); font-size:1.5rem }
-
-    /* Hero */
-    .hero{ display:grid; grid-template-columns:1.2fr .8fr; gap:2rem; align-items:center }
-    .hero h1{ font-size: clamp(2rem, 4vw, 3rem); line-height:1.1; margin:.3rem 0 }
-    .lead{ color:var(--muted); font-size:1.05rem; margin:1rem 0 1.6rem }
-    .kpi{ display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-top:1.2rem }
-    .kpi .card{ padding:1rem; text-align:center }
-    .kpi .num{ font-weight:800; font-size:1.6rem }
-
-    .searchbar{ display:flex; gap:.6rem; background:#0f172a; border:1px solid rgba(148,163,184,.25); border-radius:14px; padding:.5rem; align-items:center }
-    .searchbar input{ flex:1; background:transparent; border:0; color:var(--text); padding:.75rem .9rem; outline:none }
-
-    /* Grids */
-    .grid{ display:grid; gap:1rem }
-    .grid.routes{ grid-template-columns: repeat(3, minmax(0,1fr)) }
-    .grid.tips{ grid-template-columns: repeat(3, minmax(0,1fr)) }
-
-    .route-card{ overflow:hidden; position:relative }
-    .route-card img{ width:100%; height:220px; object-fit:cover; filter:saturate(1.05) contrast(1.05) }
-    .route-body{ padding:1rem }
-    .route-title{ display:flex; align-items:center; justify-content:space-between; gap:.5rem }
-    .route-title h3{ margin:.2rem 0; font-size:1.05rem }
-
-    .tip{ padding:1rem }
-    .tip h3{ margin:.2rem 0; font-size:1.05rem }
-
-    .section-header{ display:flex; align-items:flex-end; justify-content:space-between; gap:1rem; margin-bottom:1rem }
-    .section-header h2{ margin:0; font-size: clamp(1.3rem, 3vw, 1.8rem) }
-
-    /* Map placeholder */
-    .mapbox{ height: 380px; background: linear-gradient(180deg, rgba(14,165,233,.15), rgba(14,165,233,.06)), url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat; border:1px solid rgba(148,163,184,.18); border-radius:var(--radius); position:relative; overflow:hidden }
-    .mapbox .overlay{ position:absolute; inset:0; background: radial-gradient(600px 300px at 10% -20%, rgba(34,211,238,.18), transparent 60%) }
-    .mapcta{ position:absolute; right:1rem; bottom:1rem }
-
-    /* Newsletter */
-    .newsletter{ display:grid; grid-template-columns:1.2fr .8fr; gap:1rem; align-items:center }
-    .newsletter .card{ padding:1.2rem }
-
-    /* Contact */
-    form{ display:grid; gap:.8rem }
-    .field{ display:grid; gap:.3rem }
-    .field input, .field textarea, .field select{
-      width:100%; border:1px solid rgba(148,163,184,.25); background:#0f172a; color:var(--text); border-radius:12px; padding:.8rem .9rem; outline:none
-    }
-    .field small{ color:var(--muted) }
-    textarea{ min-height:120px; resize:vertical }
-
-    /* Footer */
-    footer{ border-top:1px solid rgba(148,163,184,.15); padding:2rem 0; color:var(--muted) }
-
-    /* Utilities */
-    .pill{ padding:.25rem .6rem; border-radius:999px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); font-size:.8rem }
-    .flex{ display:flex; gap:.6rem; align-items:center }
-    .center{ text-align:center }
-
-    /* Responsive */
-    @media (max-width: 960px){
-      .hero, .newsletter{ grid-template-columns:1fr }
-      .grid.routes{ grid-template-columns: repeat(2, minmax(0,1fr)) }
-    }
-    @media (max-width: 680px){
-      .menu{ position:fixed; inset:60px 12px auto 12px; flex-direction:column; background:#0b1220; padding:1rem; border:1px solid rgba(148,163,184,.2); border-radius:14px; display:none }
-      .menu.open{ display:flex }
-      .hamb{ display:inline-flex }
-      .grid.routes, .grid.tips{ grid-template-columns:1fr }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <a href="#contenido" class="skip">Saltar al contenido</a>
-  <header>
-    <div class="container nav" role="navigation" aria-label="Principal">
-      <a class="logo" href="#inicio" aria-label="Inicio RuteroRD">
-        <span class="dot" aria-hidden="true"></span>
-        <span>Rutero<span style="color:var(--brand-2)">RD</span></span>
-      </a>
+  <header class="header">
+    <div class="container nav">
+      <a class="logo" href="#inicio"><span class="dot"></span><span>Rutero<span class="accent">RD</span></span></a>
       <nav class="menu" id="menu">
         <a href="#rutas" class="active">Rutas</a>
+        <a href="#catalogo">Provincias</a>
         <a href="#mapa">Mapa</a>
-        <a href="#tips">Consejos</a>
         <a href="#contacto">Contáctame</a>
       </nav>
-      <button class="hamb" id="hamb" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">☰</button>
     </div>
   </header>
 
-  <main id="contenido" class="container section">
+  <main class="container page" id="contenido">
     <!-- HERO -->
     <section id="inicio" class="hero">
       <div>
         <p class="pill">Rutas y Aventuras en RD</p>
-        <h1>Explora República Dominicana con guías claras y rutas confiables</h1>
-        <p class="lead">Encuentra tu próxima escapada: playas, montañas, ríos, cascadas, miradores y más. Rutas paso a paso, mapas, consejos y equipo recomendado.</p>
-        <div class="searchbar card" role="search" aria-label="Buscar rutas">
-          <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-left:.5rem"><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/></svg>
-          <input id="q" type="search" placeholder="Busca por destino, provincia o tipo: playa, río, sendero…" aria-label="Término de búsqueda" />
-          <button class="btn" id="btnBuscar">Buscar</button>
-        </div>
+        <h1>Explora República Dominicana con guías claras y confiables</h1>
+        <p class="lead">Playas, montañas, ríos, cascadas y miradores. Rutas paso a paso y consejos prácticos.</p>
         <div class="kpi">
-          <div class="card"><div class="num">+48</div><div class="muted">Rutas verificadas</div></div>
-          <div class="card"><div class="num">+16</div><div class="muted">Provincias cubiertas</div></div>
+          <div class="card"><div class="num" id="kpiRutas">0</div><div class="muted">Rutas publicadas</div></div>
+          <div class="card"><div class="num" id="kpiProvincias">0</div><div class="muted">Provincias cubiertas</div></div>
           <div class="card"><div class="num">24/7</div><div class="muted">Actualizaciones</div></div>
         </div>
-        <div class="flex" style="margin-top:1rem">
-          <a class="btn" href="#rutas">Ver rutas destacadas</a>
-          <a class="btn secondary" href="#tips">Consejos & Tips</a>
-        </div>
       </div>
-      <div class="card" aria-hidden="true">
-        <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=1600&auto=format&fit=crop" alt="Playa caribeña con palmeras" style="border-radius:var(--radius)" loading="lazy" />
-      </div>
-    </section>
-
-    <!-- RUTAS DESTACADAS -->
-    <section id="rutas" class="section">
-      <div class="section-header">
-        <h2>Rutas destacadas</h2>
-        <div class="flex">
-          <span class="tag">Actualizado</span>
-          <a class="btn secondary" href="#todas">Ver todas</a>
-        </div>
-      </div>
-      <div class="grid routes">
-        <!-- Card 1 -->
-        <article class="route-card card">
-          <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1600&auto=format&fit=crop" alt="Sendero en bosque tropical" loading="lazy" />
-          <div class="route-body">
-            <div class="route-title">
-              <h3>Salto de Aguas Blancas</h3>
-              <span class="pill">Montaña</span>
-            </div>
-            <p class="muted">Constanza · dificultad media · 3–4 h ida y vuelta.</p>
-            <div class="flex" style="justify-content:space-between; margin-top:.6rem">
-              <span class="muted">📍 La Vega</span>
-              <a class="btn" href="#detalle" data-route="aguas-blancas">Ver guía</a>
-            </div>
-          </div>
-        </article>
-        <!-- Card 2 -->
-        <article class="route-card card">
-          <img src="https://images.unsplash.com/photo-1493558103817-58b2924bce98?q=80&w=1600&auto=format&fit=crop" alt="Playa con arena blanca y mar turquesa" loading="lazy" />
-          <div class="route-body">
-            <div class="route-title">
-              <h3>Playa Frontón</h3>
-              <span class="pill">Playa</span>
-            </div>
-            <p class="muted">Samaná · dificultad baja · 1 h en bote o 2 h a pie.</p>
-            <div class="flex" style="justify-content:space-between; margin-top:.6rem">
-              <span class="muted">📍 Samaná</span>
-              <a class="btn" href="#detalle" data-route="playa-fronton">Ver guía</a>
-            </div>
-          </div>
-        </article>
-        <!-- Card 3 -->
-        <article class="route-card card">
-          <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=1600&auto=format&fit=crop" alt="Río cristalino entre rocas" loading="lazy" />
-          <div class="route-body">
-            <div class="route-title">
-              <h3>27 Charcos de Damajagua</h3>
-              <span class="pill">Río</span>
-            </div>
-            <p class="muted">Puerto Plata · dificultad media · 3–5 h según tramos.</p>
-            <div class="flex" style="justify-content:space-between; margin-top:.6rem">
-              <span class="muted">📍 Imbert</span>
-              <a class="btn" href="#detalle" data-route="damajagua">Ver guía</a>
-            </div>
-          </div>
-        </article>
+      <div class="hero-media card">
+        <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=1600&auto=format&fit=crop" alt="Playa caribeña" loading="lazy" />
       </div>
     </section>
 
     <!-- TODAS LAS RUTAS -->
-    <section id="todas" class="section">
+    <section id="rutas" class="section">
       <div class="section-header">
         <h2>Todas las rutas</h2>
-        <div class="flex">
+        <div class="filters">
           <select id="filtroTipo" aria-label="Filtrar por tipo">
             <option value="">Todos los tipos</option>
             <option value="Playa">Playa</option>
@@ -241,71 +56,31 @@
           </select>
           <select id="filtroProv" aria-label="Filtrar por provincia">
             <option value="">Todas las provincias</option>
-            <option>Santo Domingo</option>
-            <option>La Vega</option>
-            <option>Puerto Plata</option>
-            <option>Samaná</option>
-            <option>Barahona</option>
           </select>
         </div>
       </div>
       <div id="gridRutas" class="grid routes"></div>
+      <div class="center mt">
+        <button id="btnVerMas" class="btn secondary" style="display:none">Ver más</button>
+      </div>
     </section>
 
-    <!-- MAPA -->
+    <!-- CATÁLOGO POR PROVINCIA -->
+    <section id="catalogo" class="section">
+      <div class="section-header">
+        <h2>Catálogo por provincia</h2>
+        <span class="muted">Explora destinos por provincia y tipo</span>
+      </div>
+      <div id="gridCatalogo" class="grid tips"></div>
+    </section>
+
+    <!-- MAPA (placeholder) -->
     <section id="mapa" class="section">
       <div class="section-header">
         <h2>Mapa de destinos</h2>
-        <span class="muted">Vista rápida de ubicaciones destacadas</span>
+        <span class="muted">Próximamente: mapa interactivo</span>
       </div>
-      <div class="mapbox card" role="img" aria-label="Mapa estilizado de República Dominicana">
-        <div class="overlay"></div>
-        <div class="mapcta"><a class="btn" href="#contacto">Solicitar ruta personalizada</a></div>
-      </div>
-    </section>
-
-    <!-- TIPS -->
-    <section id="tips" class="section">
-      <div class="section-header">
-        <h2>Consejos & Tips</h2>
-        <a class="btn secondary" href="#contacto">Pedir asesoría</a>
-      </div>
-      <div class="grid tips">
-        <article class="tip card">
-          <h3>¿Qué llevar a un salto?</h3>
-          <p class="muted">Calzado con agarre, bolsa seca, repelente y un botiquín básico. Evita algodón; prefiere telas de secado rápido.</p>
-        </article>
-        <article class="tip card">
-          <h3>Mejor temporada</h3>
-          <p class="muted">Noviembre–abril suele tener temperaturas más suaves. Revisa el clima local y caudal de ríos antes de salir.</p>
-        </article>
-        <article class="tip card">
-          <h3>Seguridad primero</h3>
-          <p class="muted">Comparte tu ruta con alguien, lleva batería extra y respeta las indicaciones de guías locales.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- NEWSLETTER / CONTACTO RÁPIDO -->
-    <section class="section newsletter">
-      <div class="card">
-        <h2>Suscríbete al boletín</h2>
-        <p class="muted">Nuevas rutas, mapas y tips. Sin spam.</p>
-        <form id="formNews" aria-label="Formulario de suscripción">
-          <div class="field">
-            <label for="email">Correo electrónico</label>
-            <input id="email" type="email" placeholder="tucorreo@ejemplo.com" required />
-            <small>Prometemos no enviar spam. Cancela cuando quieras.</small>
-          </div>
-          <button class="btn" type="submit">Unirme</button>
-          <p id="msgNews" class="muted" role="status" aria-live="polite" style="margin:.4rem 0 0"></p>
-        </form>
-      </div>
-      <div class="card">
-        <h2>¿Necesitas una ruta a medida?</h2>
-        <p class="muted">Cuéntame tu destino, presupuesto y tiempo disponible, y te propongo una ruta realista y segura.</p>
-        <a class="btn" href="#contacto">Contáctame</a>
-      </div>
+      <div class="mapbox card" role="img" aria-label="Mapa estilizado de República Dominicana"></div>
     </section>
 
     <!-- CONTACTO -->
@@ -314,25 +89,12 @@
         <h2>Contáctame</h2>
         <span class="muted">Responderé lo antes posible</span>
       </div>
-      <form id="formContacto" class="card" style="padding:1rem" aria-label="Formulario de contacto">
-        <div class="field">
-          <label for="nombre">Nombre</label>
-          <input id="nombre" required placeholder="Tu nombre" />
-        </div>
-        <div class="field">
-          <label for="correo">Correo</label>
-          <input id="correo" type="email" required placeholder="tunombre@correo.com" />
-        </div>
-        <div class="field">
-          <label for="asunto">Asunto</label>
-          <input id="asunto" required placeholder="Consulta, propuesta, colaboración…" />
-        </div>
-        <div class="field">
-          <label for="mensaje">Mensaje</label>
-          <textarea id="mensaje" required placeholder="Cuéntame detalles de la ruta o pregunta"></textarea>
-        </div>
-        <div class="flex" style="justify-content:space-between">
-          <label class="flex" style="gap:.4rem"><input type="checkbox" id="acepto"/> <span>Acepto la <a href="#" style="text-decoration:underline">política de privacidad</a></span></label>
+      <form id="formContacto" class="card form">
+        <div class="field"><label for="nombre">Nombre</label><input id="nombre" required placeholder="Tu nombre" /></div>
+        <div class="field"><label for="correo">Correo</label><input id="correo" type="email" required placeholder="tunombre@correo.com" /></div>
+        <div class="field"><label for="mensaje">Mensaje</label><textarea id="mensaje" required placeholder="Cuéntame detalles de la ruta o pregunta"></textarea></div>
+        <div class="actions">
+          <label class="check"><input type="checkbox" id="acepto" /> <span>Acepto la <a href="#" class="underline">política de privacidad</a></span></label>
           <button class="btn" type="submit">Enviar</button>
         </div>
         <p id="msgContacto" class="muted" role="status" aria-live="polite"></p>
@@ -340,113 +102,13 @@
     </section>
   </main>
 
-  <footer>
-    <div class="container" style="display:grid; gap:1rem">
-      <div class="flex" style="justify-content:space-between; align-items:center">
-        <div class="logo"><span class="dot" aria-hidden="true"></span><span>Rutero<span style="color:var(--brand-2)">RD</span></span></div>
-        <a class="btn secondary" href="#inicio">Volver arriba ↑</a>
-      </div>
-      <small>© <span id="year"></span> RuteroRD — Hecho con ♥ desde República Dominicana.</small>
+  <footer class="footer">
+    <div class="container foot">
+      <div class="logo"><span class="dot"></span><span>Rutero<span class="accent">RD</span></span></div>
+      <small>© <span id="year"></span> RuteroRD — Hecho con ♥ en RD.</small>
     </div>
   </footer>
 
-  <script>
-    // Estado base
-    const rutas = [
-      { id:'aguas-blancas', titulo:'Salto de Aguas Blancas', tipo:'Montaña', prov:'La Vega', img:'https://images.unsplash.com/photo-1470770903676-69b98201ea1c?q=80&w=1600&auto=format&fit=crop', tiempo:'3–4 h', dif:'media' },
-      { id:'playa-fronton', titulo:'Playa Frontón', tipo:'Playa', prov:'Samaná', img:'https://images.unsplash.com/photo-1501555088652-021faa106b9b?q=80&w=1600&auto=format&fit=crop', tiempo:'1–2 h', dif:'baja' },
-      { id:'damajagua', titulo:'27 Charcos de Damajagua', tipo:'Río', prov:'Puerto Plata', img:'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1600&auto=format&fit=crop', tiempo:'3–5 h', dif:'media' },
-      { id:'bahia-de-las-aguilas', titulo:'Bahía de las Águilas', tipo:'Playa', prov:'Pedernales', img:'https://images.unsplash.com/photo-1500375592092-40eb2168fd21?q=80&w=1600&auto=format&fit=crop', tiempo:'Día completo', dif:'baja' },
-      { id:'pico-duarte', titulo:'Pico Duarte', tipo:'Montaña', prov:'Santiago', img:'https://images.unsplash.com/photo-1500375592092-34c78d5cb3f0?q=80&w=1600&auto=format&fit=crop', tiempo:'2–3 días', dif:'alta' },
-      { id:'los-patos', titulo:'Los Patos', tipo:'Río', prov:'Barahona', img:'https://images.unsplash.com/photo-1519817650390-64a93db511aa?q=80&w=1600&auto=format&fit=crop', tiempo:'Medio día', dif:'baja' },
-      { id:'punta-rucia', titulo:'Punta Rucia', tipo:'Playa', prov:'Puerto Plata', img:'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=1600&auto=format&fit=crop', tiempo:'Día completo', dif:'baja' },
-      { id:'salto-jimenoa', titulo:'Salto de Jimenoa', tipo:'Río', prov:'La Vega', img:'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=1600&auto=format&fit=crop', tiempo:'2–3 h', dif:'media' },
-      { id:'los-haitises', titulo:'Parque Nacional Los Haitises', tipo:'Urbano', prov:'Samaná', img:'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1600&auto=format&fit=crop', tiempo:'Día completo', dif:'baja' }
-    ];
-
-    // Utilidades DOM
-    const $ = s => document.querySelector(s);
-    const $$ = s => Array.from(document.querySelectorAll(s));
-
-    // Menú móvil
-    const hamb = $('#hamb');
-    const menu = $('#menu');
-    hamb?.addEventListener('click', ()=>{
-      const open = menu.classList.toggle('open');
-      hamb.setAttribute('aria-expanded', String(open));
-    });
-
-    // Rellenar año
-    $('#year').textContent = new Date().getFullYear();
-
-    // Render de tarjetas
-    const grid = $('#gridRutas');
-    function renderRutas(lista){
-      grid.innerHTML = lista.map(r => `
-        <article class="route-card card">
-          <img src="${r.img}" alt="Imagen de ${r.titulo}" loading="lazy" />
-          <div class="route-body">
-            <div class="route-title">
-              <h3>${r.titulo}</h3>
-              <span class="pill">${r.tipo}</span>
-            </div>
-            <p class="muted">${r.prov} · dificultad ${r.dif} · ${r.tiempo}.</p>
-            <div class="flex" style="justify-content:space-between; margin-top:.6rem">
-              <span class="muted">📍 ${r.prov}</span>
-              <a class="btn" href="#detalle" data-route="${r.id}">Ver guía</a>
-            </div>
-          </div>
-        </article>
-      `).join('');
-    }
-
-    // Filtros
-    const filtroTipo = $('#filtroTipo');
-    const filtroProv = $('#filtroProv');
-    function aplicarFiltros(){
-      const t = filtroTipo.value; const p = filtroProv.value;
-      const filtradas = rutas.filter(r => (!t || r.tipo===t) && (!p || r.prov===p));
-      renderRutas(filtradas);
-    }
-    filtroTipo.addEventListener('change', aplicarFiltros);
-    filtroProv.addEventListener('change', aplicarFiltros);
-
-    // Búsqueda simple
-    const inputQ = $('#q');
-    $('#btnBuscar').addEventListener('click', ()=>{
-      const q = (inputQ.value||'').toLowerCase();
-      const results = rutas.filter(r => [r.titulo, r.tipo, r.prov].some(v => v.toLowerCase().includes(q)));
-      renderRutas(results);
-      window.location.hash = '#todas';
-    });
-
-    // Simular envío Newsletter
-    $('#formNews').addEventListener('submit', (e)=>{
-      e.preventDefault();
-      const email = $('#email').value.trim();
-      const msg = $('#msgNews');
-      if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
-        msg.textContent = 'Por favor, escribe un correo válido.'; msg.style.color = 'var(--warn)'; return;
-      }
-      msg.textContent = '¡Listo! Te llegará el próximo boletín.'; msg.style.color = 'var(--ok)';
-      e.target.reset();
-    });
-
-    // Simular envío Contacto
-    $('#formContacto').addEventListener('submit', (e)=>{
-      e.preventDefault();
-      const ok = $('#acepto').checked;
-      const msg = $('#msgContacto');
-      if(!ok){ msg.textContent = 'Debes aceptar la política de privacidad.'; msg.style.color='var(--warn)'; return; }
-      msg.textContent = 'Mensaje enviado (simulado). Te responderé al correo indicado.'; msg.style.color='var(--ok)';
-      e.target.reset();
-    });
-
-    // Render inicial
-    renderRutas(rutas);
-
-    // Accesibilidad: cerrar menú al navegar
-    $$('#menu a').forEach(a=> a.addEventListener('click', ()=>{ menu.classList.remove('open'); hamb.setAttribute('aria-expanded','false'); }));
-  </script>
+  <script src="js/app.js"></script>
 </body>
 </html>

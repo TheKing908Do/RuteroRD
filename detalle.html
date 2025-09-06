@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Detalle de Ruta — RuteroRD</title>
+  <meta name="description" content="Detalle de la ruta seleccionada en RuteroRD." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a class="logo" href="index.html#rutas"><span class="dot"></span><span>Rutero<span class="accent">RD</span></span></a>
+      <nav class="menu">
+        <a href="index.html#rutas" class="active">Rutas</a>
+        <a href="index.html#catalogo">Provincias</a>
+        <a href="index.html#mapa">Mapa</a>
+        <a href="index.html#contacto">Contáctame</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page">
+    <article id="detalle" class="card">
+      <div id="hero"></div>
+      <div class="route-body">
+        <p class="pill" id="pill"></p>
+        <h1 id="titulo">Cargando…</h1>
+        <p class="muted" id="resumen"></p>
+
+        <!-- Galería principal (muestra 2 y luego 'ver más') -->
+        <div id="galeria-wrap" class="mb" style="display:none">
+          <h2>Imágenes</h2>
+          <div id="galeria" class="grid gallery"></div>
+          <div class="center mt"><button id="btnMasFotos" class="btn secondary" style="display:none">Ver más fotos</button></div>
+          <p class="muted" id="nota-galeria"></p>
+        </div>
+
+        <!-- Videos YouTube -->
+        <div id="videos-wrap" class="mb" style="display:none">
+          <h2>Videos</h2>
+          <div id="videos"></div>
+          <p class="muted" id="nota-videos"></p>
+        </div>
+
+        <!-- Mapa -->
+        <div id="mapa-wrap" class="mb" style="display:none">
+          <h2>Mapa</h2>
+          <div id="mapa-embed" class="embed"></div>
+          <p class="muted" id="nota-mapa"></p>
+        </div>
+
+        <div class="mt"><a class="btn" href="index.html#rutas">← Volver a todas las rutas</a></div>
+      </div>
+    </article>
+
+    <p id="notfound" class="muted" style="display:none">No se encontró la ruta solicitada.</p>
+  </main>
+
+  <footer class="footer">
+    <div class="container foot">
+      <small>© <span id="year"></span> RuteroRD</small>
+    </div>
+  </footer>
+
+  <script src="js/detalle.js"></script>
+</body>
+</html>
