@@ -1,0 +1,20 @@
+/* components.css */
+.btn {
+  background: var(--color-principal);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.btn:hover {
+  background: #23236a;
+}
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.1);
+  padding: 1rem;
+  margin: 1rem 0;
+}
