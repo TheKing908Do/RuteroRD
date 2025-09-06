@@ -1,0 +1,72 @@
+:root{
+  --bg:#0b1220;--bg2:#0f172a;--card:#111827;--text:#e5e7eb;--muted:#94a3b8;
+  --brand:#0ea5e9;--brand2:#22d3ee;--ok:#22c55e;--warn:#f59e0b;--radius:18px;--maxw:1100px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu;line-height:1.6;color:var(--text);background:radial-gradient(1000px 600px at 110% 10%, rgba(14,165,233,.12), transparent 50%), var(--bg)}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+.container{max-width:var(--maxw);margin:auto;padding-inline:1rem}
+.page{padding:clamp(2rem,6vw,3rem) 0}
+.section{padding:clamp(2rem,6vw,3rem) 0}
+.section-header{display:flex;gap:1rem;align-items:flex-end;justify-content:space-between;margin-bottom:1rem}
+.card{background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.00));border:1px solid rgba(148,163,184,.18);border-radius:var(--radius);box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.btn{display:inline-flex;align-items:center;gap:.6rem;padding:.8rem 1rem;border-radius:14px;border:1px solid rgba(148,163,184,.3);background:linear-gradient(180deg, rgba(34,211,238,.1), rgba(14,165,233,.08));color:white;font-weight:600}
+.btn:hover{transform:translateY(-1px);filter:brightness(1.05)}
+.btn.secondary{background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));color:var(--text)}
+.pill{padding:.25rem .6rem;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);font-size:.8rem}
+.muted{color:var(--muted)}
+.underline{text-decoration:underline}
+.center{text-align:center}
+.mt{margin-top:1rem}
+.mb{margin-bottom:1rem}
+
+.header{position:sticky;top:0;z-index:50;backdrop-filter:saturate(180%) blur(10px);background:rgba(11,18,32,.6);border-bottom:1px solid rgba(148,163,184,.15)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:.8rem 0}
+.logo{display:flex;align-items:center;gap:.6rem;font-weight:800;letter-spacing:.2px}
+.logo .dot{width:10px;height:10px;border-radius:50%;background:linear-gradient(130deg, var(--brand), var(--brand2))}
+.logo .accent{color:var(--brand2)}
+.menu{display:flex;align-items:center;gap:1rem}
+.menu a{padding:.5rem .8rem;border-radius:10px;color:var(--muted)}
+.menu a.active,.menu a:hover{color:#fff;background:rgba(255,255,255,.05)}
+
+.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:2rem;align-items:center}
+.hero .lead{color:var(--muted);font-size:1.05rem;margin:.6rem 0 1rem}
+.hero-media img{border-radius:var(--radius)}
+
+.kpi{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem}
+.kpi .card{padding:1rem;text-align:center}
+.kpi .num{font-weight:800;font-size:1.6rem}
+
+.grid{display:grid;gap:1rem}
+.grid.routes{grid-template-columns:repeat(3, minmax(0,1fr))}
+.grid.tips{grid-template-columns:repeat(3, minmax(0,1fr))}
+.grid.gallery{grid-template-columns:repeat(3, minmax(0,1fr))}
+
+.route-card img{width:100%;height:140px;object-fit:cover;filter:saturate(1.05) contrast(1.05);border-top-left-radius:18px;border-top-right-radius:18px}
+.route-body{padding:1rem}
+.route-title{display:flex;align-items:center;justify-content:space-between;gap:.5rem}
+.route-title h3{margin:.2rem 0;font-size:1.05rem}
+
+.form{padding:1rem;display:grid;gap:.8rem}
+.field{display:grid;gap:.3rem}
+.field input,.field textarea,.field select{width:100%;border:1px solid rgba(148,163,184,.25);background:#0f172a;color:var(--text);border-radius:12px;padding:.8rem .9rem;outline:none}
+textarea{min-height:120px;resize:vertical}
+.actions{display:flex;justify-content:space-between;align-items:center}
+.check{display:flex;gap:.4rem;align-items:center}
+
+.mapbox{height:380px;background:linear-gradient(180deg, rgba(14,165,233,.15), rgba(14,165,233,.06)), url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;border:1px solid rgba(148,163,184,.18);border-radius:var(--radius);position:relative;overflow:hidden}
+
+.embed{position:relative;width:100%;height:0;padding-bottom:56.25%;border:1px solid rgba(148,163,184,.18);border-radius:18px;overflow:hidden}
+.embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+.footer{border-top:1px solid rgba(148,163,184,.15);padding:2rem 0;color:var(--muted)}
+
+@media (max-width:960px){
+  .hero{grid-template-columns:1fr}
+  .grid.routes{grid-template-columns:repeat(2, minmax(0,1fr))}
+}
+@media (max-width:680px){
+  .grid.routes, .grid.tips, .grid.gallery{grid-template-columns:1fr}
+}
