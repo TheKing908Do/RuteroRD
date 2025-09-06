@@ -1,0 +1,103 @@
+{
+  "version": 2,
+  "generatedAt": "2025-09-06",
+  "entries": [
+    {
+      "slug": "aguas-blancas",
+      "titulo": "Salto de Aguas Blancas",
+      "prov": "La Vega",
+      "tipo": "Montaña",
+      "img": "https://images.unsplash.com/photo-1470770903676-69b98201ea1c?q=80&w=1600&auto=format&fit=crop",
+      "tiempo": "3–4 h",
+      "dif": "media",
+      "resumen": "Cascada de alta montaña con clima fresco.",
+      "gallery": [
+        "https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1600&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1455218873509-8097305ee378?q=80&w=1600&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop"
+      ],
+      "galleryNote": "Lleva bolsa seca para proteger el móvil en la zona de spray.",
+      "videos": [
+        "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+      ],
+      "videosNote": "Video de referencia; comprueba horarios actuales.",
+      "map": {
+        "lat": 18.909,
+        "lng": -70.71,
+        "zoom": 11
+      },
+      "mapNote": "El último tramo puede requerir 4x4 en temporada de lluvias."
+    },
+    {
+      "slug": "playa-fronton",
+      "titulo": "Playa Frontón",
+      "prov": "Samaná",
+      "tipo": "Playa",
+      "img": "https://images.unsplash.com/photo-1501555088652-021faa106b9b?q=80&w=1600&auto=format&fit=crop",
+      "tiempo": "1–2 h",
+      "dif": "baja",
+      "resumen": "Arena blanca y acantilados en Samaná.",
+      "gallery": [
+        "https://images.unsplash.com/photo-1493558103817-58b2924bce98?q=80&w=1600&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1483683804023-6ccdb62f86ef?q=80&w=1600&auto=format&fit=crop"
+      ],
+      "videos": [
+        "hY7m5jjJ9mM"
+      ],
+      "map": {
+        "embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!...recortado..."
+      }
+    },
+    {
+      "slug": "damajagua",
+      "titulo": "27 Charcos de Damajagua",
+      "prov": "Puerto Plata",
+      "tipo": "Río",
+      "img": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1600&auto=format&fit=crop",
+      "tiempo": "3–5 h",
+      "dif": "media",
+      "resumen": "Circuito de saltos y toboganes naturales.",
+      "gallery": [
+        "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=1600&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1600&auto=format&fit=crop"
+      ],
+      "videos": [],
+      "map": {
+        "lat": 19.655,
+        "lng": -70.753,
+        "zoom": 12
+      }
+    },
+    {
+      "slug": "bahia-aguilas",
+      "titulo": "Bahía de las Águilas",
+      "prov": "Pedernales",
+      "tipo": "Playa",
+      "img": "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?q=80&w=1600&auto=format&fit=crop",
+      "tiempo": "Día completo",
+      "dif": "baja",
+      "resumen": "Una de las playas más vírgenes del Caribe.",
+      "gallery": [
+        "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?q=80&w=1600&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=1600&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1600&auto=format&fit=crop"
+      ],
+      "links": [
+        {
+          "label": "Reserva tour",
+          "url": "https://example.com"
+        }
+      ],
+      "videos": [
+        "https://youtu.be/aqz-KE-bpKQ"
+      ],
+      "videosNote": "El agua puede estar más movida en la tarde.",
+      "map": {
+        "lat": 17.832,
+        "lng": -71.523,
+        "zoom": 11
+      },
+      "mapNote": "Evita ir sin suficiente combustible; hay pocos servicios."
+    }
+  ]
+}
