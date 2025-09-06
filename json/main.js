@@ -8,3 +8,10 @@ console.log("RuteroRD iniciado ✅");
 document.addEventListener("DOMContentLoaded", () => {
   console.log("DOM cargado");
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  if (document.querySelector('.owl-carousel')) {
+    initOwlCarousel();
+  }
+});
+
