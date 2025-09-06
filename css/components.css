@@ -18,3 +18,6 @@
   padding: 1rem;
   margin: 1rem 0;
 }
+
+@import url('owl.carousel.min.css');
+@import url('owl.theme.default.min.css');
